@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<audio id="hover-audio" src="./sound/Hover3.mp3" preload="auto"></audio>
+<audio id="click-audio" src="./sound/Click3.mp3" preload="auto"></audio>
+
+<body>
+
+    <div class="nav_bg">
+        <nav>
+            <div class="container">
+                <div class="navlinks">
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                    <div class="links">
+                        <a href="#">Projects</a>
+                        <a href="about.html">About</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="menuBar" onclick="handleMenu()">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox" class="toggle">
+                            <div class="bars" id="bar1"></div>
+                            <div class="bars" id="bar2"></div>
+                            <div class="bars" id="bar3"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+    <script src="sound.js"></script>
+</body>
+
+</html>

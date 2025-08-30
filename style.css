@@ -5,7 +5,8 @@
     --line_color: #2d6c70;
 }
 body {
-    background-color: var(--bg_color2);
+    background-color: var(--bg_color);
+    font-family: "Roboto", sans-serif !important;
 }
 .container {
     width: 90%;
@@ -14,15 +15,16 @@ body {
 .nav_bg {
     background-color: var(--bg_color);
     width: 100%;
-    position: fixed;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
     box-shadow: 0 0 3px var(--txt_color);
+    transition: .3s;
 }
 nav {
     position: relative;
 }
 .logo {
-    color: var(--txt_color);
-    font: 1rem "Roboto", sans-serif;
     width: 150px;
     height: 70px;
 }
@@ -31,6 +33,7 @@ nav {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    transition: .3s;
 }
 .navlinks {
     display: flex;
@@ -38,6 +41,7 @@ nav {
     align-items: center;
 }
 .links {
+    background-color: var(--bg_color);
     position: absolute;
     top: 100%;
     left: 0;
@@ -48,24 +52,33 @@ nav {
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
-    transition: 0.8s;
+    transition: 0.6s;
 }
+
 .links.open {
-    padding: 0 5% 30px;
+    padding: 20px 5% 30px;
     height: 90vh;
+}
+
+.links li {
+    padding: 15px;
+    border-top: 1px solid var(--line_color);
+    
 }
 .links a {
     font: 1rem "Roboto", sans-serif;
     color: var(--txt_color);
-    padding: 15px;
-    border-top: 1px solid var(--line_color);
+    transition: .3s;
 }
-.links a:last-child {
+
+.links li:last-child {
     border-bottom: 1px solid var(--line_color);
 }
+
 #checkbox {
     display: none;
 }
+
 .toggle {
     position: relative;
     width: 27px;
@@ -77,52 +90,199 @@ nav {
     gap: 5px;
     transition-duration: 0.5s;
 }
+
 .bars {
     width: 100%;
     height: 3px;
     background-color: var(--txt_color);
     border-radius: 4px;
 }
-#checkbox:checked + .toggle .bars {
+
+#checkbox:checked+.toggle .bars {
     position: absolute;
     transition-duration: 0.5s;
 }
-#checkbox:checked + .toggle #bar2 {
+
+#checkbox:checked+.toggle #bar2 {
     transform: scaleX(0);
     transition-duration: 0.5s;
 }
-#checkbox:checked + .toggle #bar1 {
+
+#checkbox:checked+.toggle #bar1 {
     width: 100%;
     transform: rotate(45deg);
     transition-duration: 0.5s;
 }
-#checkbox:checked + .toggle #bar3 {
+
+#checkbox:checked+.toggle #bar3 {
     width: 100%;
     transform: rotate(-45deg);
     transition-duration: 0.5s;
 }
-#checkbox:checked + .toggle {
+
+#checkbox:checked+.toggle {
     transition-duration: 0.5s;
     transform: rotate(180deg);
+}
+
+/**<<--HEADER-->>*/
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background4.png') center/cover no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_content {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.profile_img {
+    width: 200px;
+    height: 280px;
+    padding: 2px;
+    border: 2px solid var(--txt_color);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.profile_img img {
+    border-radius: 17px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    max-width: 800px;
+    color: var(--txt_color);
+}
+
+.hero-title {
+    color: var(--txt_color);
+    font: 700 2.5rem "Roboto", sans-serif;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--txt_color), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+/* MAIN CONTENT */
+main {
+    padding: 80px 0;
+    min-height: 100vh;
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+/* ABOUT SECTION */
+
+/* SKILLS SECTION */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    color: #c1effb;
+}
+
+.skill-card {
+    background: var(--bg_color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--line_color);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(193, 239, 251, 0.2);
+    border-color: var(--txt_color);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--line_color);
+}
+
+.skill-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--txt_color);
+}
+
+.skill-description {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+
+/* ANIMATIONS */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(193, 239, 251, 0.5);
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(193, 239, 251, 0.8), 0 0 30px rgba(193, 239, 251, 0.6);
+    }
 }
 
 @media (min-width: 768px) {
     .container {
         max-width: 1300px;
     }
+
     .nav_bg {
         height: fit-content;
-        margin-top: 30px;
+        margin-top: 20px;
         box-shadow: 0 0 5px var(--txt_color);
     }
+
     .logo {
         font-size: 1.5rem;
         width: 200px;
         height: 80px;
     }
+
+    .logo img:hover {
+        filter: drop-shadow(0 0 8px var(--txt_color)) drop-shadow(0 0 12px var(--txt_color));
+    }
+
     .navlinks {
         padding: 0;
     }
+
     .links {
         position: static;
         flex-direction: row;
@@ -132,12 +292,37 @@ nav {
         height: fit-content;
         padding: 15px 0;
     }
+    .links li,
+    .links li:last-child {
+        border: none;
+    }
     .links a,
     .links a:last-child {
-        border: none;
         font-size: 1.3rem;
     }
+    .links a:hover {
+        text-shadow: 0 0 8px var(--txt_color), 0 0 12px var(--txt_color);
+    }
+
     .menuBar {
         display: none;
+    }
+
+    .header_content {
+        margin-top: 150px;
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.4rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }

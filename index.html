@@ -7,11 +7,15 @@
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 </head>
+
+<audio id="hover-audio" src="./sound/Hover3.mp3" preload="auto"></audio>
+<audio id="click-audio" src="./sound/Click3.mp3" preload="auto"></audio>
 
 <body>
 
@@ -22,11 +26,19 @@
                     <a href="#" class="logo">
                         <img src="img/logo.png" alt="">
                     </a>
-                    <div class="links">
-                        <a href="">Projects</a>
-                        <a href="">About</a>
-                        <a href="">Contact</a>
-                    </div>
+                    <ul class="links">
+                        <li><a href="#">Projects</a>
+                            <ul class="alt_links">
+                                <li><a href="#">Calc</a></li>
+                                <li><a href="#">Sayt.az(Cover)</a></li>
+                                <li><a href="#">Countries</a></li>
+                                <li><a href="#">Libraff(Cover)</a></li>
+                                <li><a href="#">Nike.com(Cover)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                     <div class="menuBar" onclick="handleMenu()">
                         <input type="checkbox" id="checkbox">
                         <label for="checkbox" class="toggle">
@@ -39,13 +51,66 @@
             </div>
         </nav>
     </div>
-    <header></header>
-    <main></main>
+
+    <header>
+        <div class="container">
+            <div class="header_content">
+                <div class="profile">
+                    <div class="profile_img">
+                        <img src="./img/profile_img.JPG" alt="">
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">I am Aghasalim Musayev</h1>
+                    <p class="hero-subtitle">Frontend Developer</p>
+                    <p class="hero-description">
+                        Müasir texnologiyalar ilə innovativ həllər yaradan, istifadəçi təcrübəsinə fokuslu
+                        və hər bir proyektə ehtiras ilə yanaşan bir geliştiriciyəm. Kod yazmaq mənim üçün
+                        sadəcə peşə deyil, həm də sənətdir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="section">
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">🎨</div>
+                        <h3 class="skill-title">UI/UX Design</h3>
+                        <p class="skill-description">
+                            HTML5, CSS, CSS3, Bootstrap, Tailwind framework-lər ilə
+                            responsiv və interactive interfeyslər yaradılmasi.
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-title">Functionality</h3>
+                        <p class="skill-description">
+                            JavScript, React, JQuery
+                        </p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon">🔧</div>
+                        <h3 class="skill-title">Problem Solving</h3>
+                        <p class="skill-description">
+                            Mürəkkəb problemləri sadə həlllərə çevirmək, kodu optimize etmək və
+                            performance yaxşılaşdırmaq konusunda güclü analitik bacarıqlara sahibəm.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
     <footer></footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script src="sound.js"></script>
 </body>
 
 </html>
