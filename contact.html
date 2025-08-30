@@ -26,11 +26,21 @@
                     <a href="index.html" class="logo">
                         <img src="img/logo.png" alt="">
                     </a>
-                    <div class="links">
-                        <a href="#">Projects</a>
-                        <a href="about.html">About</a>
-                        <a href="#">Contact</a>
-                    </div>
+                    <ul class="links">
+                        <li onclick="toggleAltLinks()"><a href="#">Projects</a>
+                            <ul class="alt_links">
+                                <li><a href="https://aga-calc.vercel.app/" target="_blank">Calc</a></li>
+                                <li><a href="https://valyuta-aga.vercel.app/" target="_blank">Valyuta</a></li>
+                                <li><a href="https://sayt-az-aga.vercel.app/saytCalc.html"
+                                        target="_blank">Sayt.az(Cover)</a></li>
+                                <li><a href="https://countries-aga.vercel.app/" target="_blank">Countries</a></li>
+                                <li><a href="https://libraff-aga.vercel.app/" target="_blank">Libraff(Cover)</a></li>
+                                <li><a href="https://nike-aga.vercel.app/" target="_blank">Nike.com(Cover)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
                     <div class="menuBar" onclick="handleMenu()">
                         <input type="checkbox" id="checkbox">
                         <label for="checkbox" class="toggle">
@@ -48,9 +58,7 @@
 
     </header>
 
-    <main>
-
-    </main>
+    <main></main>
 
     <footer></footer>
 

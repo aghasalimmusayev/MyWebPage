@@ -49,36 +49,43 @@ nav {
     z-index: 100;
     width: 100%;
     height: 0;
-    overflow-y: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     transition: 0.6s;
 }
-
 .links.open {
-    padding: 20px 5% 30px;
+    padding: 20px 5% 50px;
     height: 90vh;
 }
-
 .links li {
-    padding: 15px;
-    border-top: 1px solid var(--line_color);
-    
+    border-top: 1px solid var(--line_color);   
+    width: 100%;
 }
 .links a {
+    padding: 15px;
+    display: block;
     font: 1rem "Roboto", sans-serif;
     color: var(--txt_color);
     transition: .3s;
 }
-
+.alt_links.open {
+    height: 300px;
+}
+.alt_links {
+    width: 90%;
+    height: 0;
+    overflow: hidden;
+    margin-right: 0;
+    margin-left: auto;
+    transition: .3s;
+}
 .links li:last-child {
     border-bottom: 1px solid var(--line_color);
 }
-
 #checkbox {
     display: none;
 }
-
 .toggle {
     position: relative;
     width: 27px;
@@ -90,36 +97,30 @@ nav {
     gap: 5px;
     transition-duration: 0.5s;
 }
-
 .bars {
     width: 100%;
     height: 3px;
     background-color: var(--txt_color);
     border-radius: 4px;
 }
-
 #checkbox:checked+.toggle .bars {
     position: absolute;
     transition-duration: 0.5s;
 }
-
 #checkbox:checked+.toggle #bar2 {
     transform: scaleX(0);
     transition-duration: 0.5s;
 }
-
 #checkbox:checked+.toggle #bar1 {
     width: 100%;
     transform: rotate(45deg);
     transition-duration: 0.5s;
 }
-
 #checkbox:checked+.toggle #bar3 {
     width: 100%;
     transform: rotate(-45deg);
     transition-duration: 0.5s;
 }
-
 #checkbox:checked+.toggle {
     transition-duration: 0.5s;
     transform: rotate(180deg);
@@ -129,9 +130,8 @@ nav {
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background4.png') center/cover no-repeat;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
-
 header {
     display: flex;
     align-items: center;
@@ -139,15 +139,12 @@ header {
     position: relative;
     overflow: hidden;
 }
-
 .header_content {
-    margin-top: 80px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 20px 0;
 }
-
 .profile_img {
     width: 200px;
     height: 280px;
@@ -156,19 +153,16 @@ header {
     border-radius: 20px;
     overflow: hidden;
 }
-
 .profile_img img {
     border-radius: 17px;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .hero-content {
     max-width: 800px;
     color: var(--txt_color);
 }
-
 .hero-title {
     color: var(--txt_color);
     font: 700 2.5rem "Roboto", sans-serif;
@@ -179,14 +173,12 @@ header {
     background-clip: text;
     animation: glow 2s ease-in-out infinite alternate;
 }
-
 .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
     font-weight: 300;
 }
-
 .hero-description {
     font-size: 1rem;
     line-height: 1.6;
@@ -199,12 +191,9 @@ main {
     padding: 80px 0;
     min-height: 100vh;
 }
-
 .section {
     margin-bottom: 80px;
 }
-
-/* ABOUT SECTION */
 
 /* SKILLS SECTION */
 .skills-grid {
@@ -213,7 +202,6 @@ main {
     gap: 2rem;
     color: #c1effb;
 }
-
 .skill-card {
     background: var(--bg_color);
     padding: 2rem;
@@ -222,37 +210,31 @@ main {
     border: 1px solid var(--line_color);
     transition: all 0.3s ease;
 }
-
 .skill-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(193, 239, 251, 0.2);
     border-color: var(--txt_color);
 }
-
 .skill-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--line_color);
 }
-
 .skill-title {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: var(--txt_color);
 }
-
 .skill-description {
     opacity: 0.8;
     line-height: 1.6;
 }
-
 
 /* ANIMATIONS */
 @keyframes glow {
     from {
         text-shadow: 0 0 5px rgba(193, 239, 251, 0.5);
     }
-
     to {
         text-shadow: 0 0 20px rgba(193, 239, 251, 0.8), 0 0 30px rgba(193, 239, 251, 0.6);
     }
@@ -262,27 +244,22 @@ main {
     .container {
         max-width: 1300px;
     }
-
     .nav_bg {
         height: fit-content;
         margin-top: 20px;
         box-shadow: 0 0 5px var(--txt_color);
     }
-
     .logo {
         font-size: 1.5rem;
         width: 200px;
         height: 80px;
     }
-
     .logo img:hover {
         filter: drop-shadow(0 0 8px var(--txt_color)) drop-shadow(0 0 12px var(--txt_color));
     }
-
     .navlinks {
         padding: 0;
     }
-
     .links {
         position: static;
         flex-direction: row;
@@ -303,25 +280,55 @@ main {
     .links a:hover {
         text-shadow: 0 0 8px var(--txt_color), 0 0 12px var(--txt_color);
     }
-
+    .alt_links {
+        background-color: var(--bg_color);
+        position: absolute;
+        top: 100%;
+        width: 300px;
+        height: 0;
+        z-index: 200;
+        border: 1px solid var(--line_color);
+        border-bottom: none;
+        border-radius: 0 0 10px 10px;
+        overflow: hidden;
+    }
+    .alt_links li{
+        padding: 0;
+        border-bottom: 1px solid var(--line_color);
+        width: 100%;
+    }
+    .alt_links a{
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+    .alt_links a:hover{
+        background-color: var(--bg_color2);
+    }
+    .links li:hover .alt_links{
+        border: 1px solid var(--line_color);
+        border-top: none;
+        height: 340px;
+    }
     .menuBar {
         display: none;
     }
-
     .header_content {
-        margin-top: 150px;
+        margin-top: 50px;
         flex-direction: row;
         gap: 50px;
     }
-
+    .profile_img {
+        width: 250px;
+        height: 350px;
+        border-radius: 20px;
+    }
     .hero-title {
         font-size: 3rem;
     }
-
     .hero-subtitle {
         font-size: 1.4rem;
     }
-
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
     }
