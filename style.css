@@ -129,21 +129,19 @@ nav {
 /**<<--HEADER-->>*/
 header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background4.png') center/cover no-repeat;
-    min-height: 100vh;
+    background-attachment: fixed;
+    height: fit-content;
     width: 100%;
-}
-header {
+    padding: 20px 0 80px !important;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
 }
 .header_content {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px 0;
 }
 .profile_img {
     width: 200px;
@@ -185,49 +183,71 @@ header {
     margin-bottom: 2rem;
     opacity: 0.8;
 }
-
-/* MAIN CONTENT */
-main {
-    padding: 80px 0;
-    min-height: 100vh;
+.section_head{
+    color: var(--txt_color);
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
 }
-.section {
-    margin-bottom: 80px;
+#technologies{
+    height: fit-content;
+    padding: 20px 0;
 }
-
-/* SKILLS SECTION */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    color: #c1effb;
+.technologies_content{
+    display: flex;
+    flex-direction: column;
 }
-.skill-card {
-    background: var(--bg_color);
-    padding: 2rem;
-    border-radius: 15px;
-    text-align: center;
+.tech_head{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.tech_name{
+    color: var(--txt_color);
+    position: absolute;
+    left: 100px;
+}
+.tech_img{
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid var(--line_color);
+    border-radius: 10px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(193, 239, 251, 0.2);
+.tech_img:hover {
+    box-shadow: 0 0 20px var(--line_color);
+}
+.tech_img img{
+    width: 60%;
+    height: 60%;
+    transition: .3s;
+}
+.tech_img:hover img{
+    transform: scale(1.15);
+}
+.tech_head.active .tech_img {
+    box-shadow: 0 0 30px var(--line_color);
     border-color: var(--txt_color);
 }
-.skill-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--line_color);
-}
-.skill-title {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
+.tech_info{
+    font-size: 0.9rem;
+    font-weight: 300;
+    margin: 5px 0 10px;
+    overflow: hidden;
+    height: 0;
     color: var(--txt_color);
+    transition: .4s;
 }
-.skill-description {
-    opacity: 0.8;
-    line-height: 1.6;
+.tech_info.open{
+    padding: 10px;
+    border: 1px solid var(--line_color);
+    border-radius: 0 20px 0 20px;
+    height: auto;
 }
 
 /* ANIMATIONS */
@@ -328,6 +348,49 @@ main {
     }
     .hero-subtitle {
         font-size: 1.4rem;
+    }
+    .section_head{
+        font-size: 3rem;
+    }
+    #technologies{
+        padding: 50px 0;
+    }
+    .technologies_content{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .tech_head{
+        position: relative;
+    }
+    .tech_name{
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 20px;
+        white-space: nowrap;
+        font-size: 1.5rem;
+    }
+    .tech_img{
+        width: 110px;
+        height: 100px;
+    }
+    .tech_info{
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        margin-top: 70px;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transform: scaleY(0);
+        transform-origin: center;
+    }
+    .tech_info.open{
+        padding: 20px;
+        border-radius: 10px;
+        transform: scaleY(1);
     }
     .skills-grid {
         grid-template-columns: repeat(3, 1fr);
