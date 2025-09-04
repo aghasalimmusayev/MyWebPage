@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     const hoverAudio = document.getElementById("hover-audio");
     const clickAudio = document.getElementById("click-audio");
+    const returnAudio = document.getElementById("return-audio");
 
+    hoverAudio.volume = 0.1;
     hoverAudio.volume = 0.1;
     clickAudio.volume = 0.7;
 
@@ -23,18 +25,18 @@ document.addEventListener("DOMContentLoaded", () => {
         hoverAudio.currentTime = 0;
         hoverAudio.play().catch(() => { });
     };
-    document.querySelectorAll(".links a, .logo").forEach(el => {
+    document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
         el.addEventListener("mouseenter", onHover);
-        el.addEventListener("focusin", onHover);
+        // el.addEventListener("focusin", onHover);
     });
     document.addEventListener("pointerdown", (e) => {
-        const a = e.target.closest(".links a, .logo");
+        const a = e.target.closest("a, .logo, .menuBar, .tech_head");
         if (!a) return;
         hoverAudio.pause(); hoverAudio.currentTime = 0;
         clickAudio.currentTime = 0;
         clickAudio.play().catch(() => { });
     });
-    document.querySelectorAll(".links a, .logo").forEach(a => {
+    document.querySelectorAll("a").forEach(a => {
         a.addEventListener("click", (e) => {
             const href = a.getAttribute("href") || "";
             const isHashOrEmpty = href === "" || href === "#" || href.startsWith("#");
@@ -59,5 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 setTimeout(go, NAV_FALLBACK_MS);
             }
         });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") {
+            returnAudio.currentTime = 0;
+            returnAudio.play().catch(() => { });
+        }
     });
 });

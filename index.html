@@ -12,10 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
-<audio id="hover-audio" src="./sound/Hover3.mp3" preload="auto"></audio>
-<audio id="click-audio" src="./sound/Click3.mp3" preload="auto"></audio>
+<audio id="hover-audio" src="./sound/hover3.mp3" preload="auto"></audio>
+<audio id="click-audio" src="./sound/click3.mp3" preload="auto"></audio>
+<audio id="return-audio" src="./sound/hover1.mp3" preload="auto"></audio>
 
 <body>
 
@@ -27,7 +29,11 @@
                         <img src="img/logo.png" alt="">
                     </a>
                     <ul class="links">
-                        <li onclick="toggleAltLinks()"><a href="#">Projects</a>
+                        <li onclick="toggleAltLinks()">
+                            <a href="#">
+                                <span>Projects</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
                             <ul class="alt_links">
                                 <li><a href="https://aga-calc.vercel.app/" target="_blank">Calc</a></li>
                                 <li><a href="https://valyuta-aga.vercel.app/" target="_blank">Valyuta</a></li>
@@ -41,7 +47,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="menuBar" onclick="handleMenu()">
+                    <div class="menuBar">
                         <input type="checkbox" id="checkbox">
                         <label for="checkbox" class="toggle">
                             <div class="bars" id="bar1"></div>
@@ -152,12 +158,40 @@
                             functionality.</p>
                     </div>
                 </div>
+                <div class="tech_spacer"></div>
             </section>
         </div>
 
     </header>
 
-    <footer>
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer_contact">
+                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>aga77ams@gmail.com</span>
+                </a>
+                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>+994 77 399 78 11</span>
+                </a>
+                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin">
+                    <i class="fa-brands fa-square-linkedin"></i>
+                    <span>Linkedin</span>
+                </a>
+                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Github</span>
+                </a>
+            </div>
+            <div class="footer-marquee" aria-label="copyright">
+                <div class="marquee-track">
+                    <p>© <span class="year-dup"></span> Aghasalim Musayev | Frontend Developer</p>
+                    <p>© <span class="year-dup"></span> Aghasalim Musayev | Frontend Developer</p>
+                    <p>© <span class="year-dup"></span> Aghasalim Musayev | Frontend Developer</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

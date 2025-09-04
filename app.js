@@ -2,6 +2,7 @@ const altLinks = document.querySelector(".alt_links")
 const techImages = document.querySelectorAll('.tech_img');
 const techInfos = document.querySelectorAll('.tech_info');
 const techHead = document.querySelectorAll('.tech_head');
+const spacer = document.querySelector('.tech_spacer');
 
 $('#checkbox').on('change', function () {
     $('.links').toggleClass('open');
@@ -26,6 +27,14 @@ function toggleAltLinks() {
     }
 }
 
+function updateSpacerHeight() {
+    const openInfo = document.querySelector('.tech_info.open');
+    if (openInfo) {
+        spacer.style.height = openInfo.offsetHeight + 50 + 'px';
+    } else {
+        spacer.style.height = '0px';
+    }
+}
 document.addEventListener('DOMContentLoaded', function () {
     techHead.forEach((head, index) => {
         head.addEventListener('click', function () {
@@ -39,14 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 currentInfo.classList.add("open");
                 head.classList.add("active");
             }
+            setTimeout(updateSpacerHeight, 100);
         });
     });
+    updateSpacerHeight()
 });
 
-// Dinamik il qur və kopyalara yay
 (function () {
     const year = String(new Date().getFullYear());
-    const yearMain = document.getElementById('year');
-    if (yearMain) yearMain.textContent = year;
     document.querySelectorAll('.year-dup').forEach(el => el.textContent = year);
 })();
+
+
