@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 </head>
 
-<audio id="hover-audio" src="./sound/Hover3.mp3" preload="auto"></audio>
-<audio id="click-audio" src="./sound/Click3.mp3" preload="auto"></audio>
+<audio id="hover-audio" src="./sound/hover3.mp3" preload="auto"></audio>
+<audio id="click-audio" src="./sound/click3.mp3" preload="auto"></audio>
+<audio id="return-audio" src="./sound/hover1.mp3" preload="auto"></audio>
 
 <body>
 
@@ -25,10 +26,14 @@
             <div class="container">
                 <div class="navlinks">
                     <a href="index.html" class="logo">
-                        <img src="img/logo.png" alt="">
+                        <img src="img/logo.png" alt="logo">
                     </a>
                     <ul class="links">
-                        <li onclick="toggleAltLinks()"><a href="#">Projects</a>
+                        <li onclick="toggleAltLinks()">
+                            <a href="#">
+                                <span>Projects</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </a>
                             <ul class="alt_links">
                                 <li><a href="https://aga-calc.vercel.app/" target="_blank">Calc</a></li>
                                 <li><a href="https://valyuta-aga.vercel.app/" target="_blank">Valyuta</a></li>
@@ -42,7 +47,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
-                    <div class="menuBar" onclick="handleMenu()">
+                    <div class="menuBar">
                         <input type="checkbox" id="checkbox">
                         <label for="checkbox" class="toggle">
                             <div class="bars" id="bar1"></div>
