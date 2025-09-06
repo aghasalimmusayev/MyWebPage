@@ -13,11 +13,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
-<audio id="hover-audio" src="./sound/hover3.mp3" preload="auto"></audio>
+<audio id="hover-audio" src="./sound/hover10.mp3" preload="auto"></audio>
 <audio id="click-audio" src="./sound/click3.mp3" preload="auto"></audio>
-<audio id="return-audio" src="./sound/hover1.mp3" preload="auto"></audio>
+<audio id="return-audio" src="./sound/return.mp3" preload="auto"></audio>
 
 <body>
 
@@ -30,7 +31,7 @@
                     </a>
                     <ul class="links">
                         <li onclick="toggleAltLinks()">
-                            <a href="#">
+                            <a href="#" data-aos="zoom-in" data-aos-duration="1000">
                                 <span>Projects</span>
                                 <i class="fa-solid fa-chevron-right"></i>
                             </a>
@@ -44,8 +45,8 @@
                                 <li><a href="https://nike-aga.vercel.app/" target="_blank">Nike.com(Cover)</a></li>
                             </ul>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html" data-aos="zoom-in" data-aos-duration="1500">About</a></li>
+                        <li><a href="contact.html" data-aos="zoom-in" data-aos-duration="2000">Contact</a></li>
                     </ul>
                     <div class="menuBar">
                         <input type="checkbox" id="checkbox">
@@ -65,14 +66,14 @@
         <div class="container">
             <section class="header_content">
                 <div class="profile">
-                    <div class="profile_img">
+                    <div class="profile_img" data-aos="fade-right" data-aos-duration="2000">
                         <img src="./img/profile_img.JPG" alt="">
                     </div>
                 </div>
                 <div class="hero-content">
-                    <h1 class="hero-title">I am Aghasalim Musayev</h1>
-                    <p class="hero-subtitle">Frontend Developer</p>
-                    <p class="hero-description">
+                    <h1 class="hero-title" data-aos="fade-left" data-aos-duration="2000">I am Aghasalim Musayev</h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="2000">Frontend Developer</p>
+                    <p class="hero-description" data-aos="fade-up" data-aos-duration="2000">
                         Müasir texnologiyalar ilə innovativ həllər yaradan, istifadəçi təcrübəsinə fokuslu
                         və hər bir proyektə ehtiras ilə yanaşan bir geliştiriciyəm. Kod yazmaq mənim üçün
                         sadəcə peşə deyil, həm də sənətdir.
@@ -83,10 +84,11 @@
 
         <div class="container">
             <section id="technologies">
-                <h2 class="section_head">Technologies</h2>
+                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="2000" data-aos-easing="linear">
+                    Technologies</h2>
                 <div class="technologies_content">
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
                                 <img src="./img/JavaScript-logo.png" alt="">
                                 <span class="tech_name">Java Script</span>
@@ -98,7 +100,7 @@
                             reusable code structures.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1000">
                             <div class="tech_img">
                                 <img src="./img/React-logo.png" alt="">
                                 <span class="tech_name">React</span>
@@ -110,7 +112,7 @@
                             and creating responsive, reusable UI components.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1500">
                             <div class="tech_img">
                                 <img src="./img/rest-api.png" alt="">
                                 <span class="tech_name">Rest API</span>
@@ -122,7 +124,7 @@
                             async/await, test via Postman.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2000">
                             <div class="tech_img">
                                 <img src="./img/responsive2.png" alt="">
                                 <span class="tech_name">Responsive design</span>
@@ -137,7 +139,7 @@
                         </p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2400">
                             <div class="tech_img">
                                 <img src="./img/Bootstrap_logo.png" alt="">
                                 <span class="tech_name">Bootstrap</span>
@@ -149,7 +151,7 @@
                             with custom CSS for unique, professional designs.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2700">
                             <div class="tech_img">
                                 <img src="./img/Tailwind_CSS_Logo.png" alt="">
                                 <span class="tech_name">Tailwind CSS</span>
@@ -161,7 +163,7 @@
                             specific design systems and brand guidelines.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="3000">
                             <div class="tech_img">
                                 <img src="./img/jquery.svg" alt="">
                                 <span class="tech_name">JQuery</span>
@@ -182,19 +184,23 @@
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer_contact">
-                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email">
+                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email" data-aos="flip-right"
+                    data-aos-duration="500">
                     <i class="fa-solid fa-envelope"></i>
                     <span>aga77ams@gmail.com</span>
                 </a>
-                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp">
+                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp"
+                    data-aos="flip-right" data-aos-duration="1000">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>+994 77 399 78 11</span>
                 </a>
-                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin">
+                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin"
+                    data-aos="flip-right" data-aos-duration="1500">
                     <i class="fa-brands fa-square-linkedin"></i>
                     <span>Linkedin</span>
                 </a>
-                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github">
+                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github"
+                    data-aos="flip-right" data-aos-duration="2000">
                     <i class="fa-brands fa-github"></i>
                     <span>Github</span>
                 </a>
@@ -213,6 +219,10 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script src="sound.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

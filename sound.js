@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickAudio = document.getElementById("click-audio");
     const returnAudio = document.getElementById("return-audio");
 
-    hoverAudio.volume = 0.1;
-    hoverAudio.volume = 0.1;
+    hoverAudio.volume = 0.3;
+    returnAudio.volume = 0.8;
     clickAudio.volume = 0.7;
 
     const unlock = () => {

@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <audio id="hover-audio" src="./sound/hover3.mp3" preload="auto"></audio>
@@ -60,28 +62,153 @@
         </nav>
     </div>
 
-    <header>
+    <div class="contact-container">
+        <div class="contact-content">
+            <div class="contact-header">
+                <h1 class="contact-title">Get In Touch</h1>
+                <p class="contact-subtitle">
+                    Yeni proyektlər, əməkdaşlıq təklifləri və ya sadəcə salam vermək üçün əlaqə saxlayın.
+                    Hər zaman yeni imkanları müzakirə etməyə açığam.
+                </p>
+            </div>
 
-    </header>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>
+                        <i class="fa-solid fa-address-book"></i>
+                        Contact Information
+                    </h3>
 
-    <main></main>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:aga77ams@gmail.com">aga77ams@gmail.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/994773997811" target="_blank">+994 77 399 78 11</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>LinkedIn</h4>
+                                <p><a href="https://www.linkedin.com/in/agha-musayev/" target="_blank">Agha Musayev</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>GitHub</h4>
+                                <p><a href="https://github.com/aghasalimmusayev?tab=repositories"
+                                        target="_blank">aghasalimmusayev</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Baku, Azerbaijan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </h3>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required
+                            placeholder="Mesajınızı buraya yazın..."></textarea>
+                    </div>
+
+                    <button type="button" class="form-button" onclick="sendMessage()">
+                        <i class="fa-solid fa-rocket"></i>
+                        Send Message
+                    </button>
+
+                    <div class="status-message" id="statusMessage"></div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="mailto:aga77ams@gmail.com" class="social-link" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/994773997811" class="social-link" title="WhatsApp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/agha-musayev/" class="social-link" title="LinkedIn"
+                    target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/aghasalimmusayev?tab=repositories" class="social-link" title="GitHub"
+                    target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer_contact">
-                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email">
+                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email" data-aos="flip-right"
+                    data-aos-duration="500">
                     <i class="fa-solid fa-envelope"></i>
                     <span>aga77ams@gmail.com</span>
                 </a>
-                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp">
+                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp"
+                    data-aos="flip-right" data-aos-duration="1000">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>+994 77 399 78 11</span>
                 </a>
-                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin">
+                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin"
+                    data-aos="flip-right" data-aos-duration="1500">
                     <i class="fa-brands fa-square-linkedin"></i>
                     <span>Linkedin</span>
                 </a>
-                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github">
+                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github"
+                    data-aos="flip-right" data-aos-duration="2000">
                     <i class="fa-brands fa-github"></i>
                     <span>Github</span>
                 </a>
@@ -100,6 +227,10 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script src="sound.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

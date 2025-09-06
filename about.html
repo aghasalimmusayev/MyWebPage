@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <audio id="hover-audio" src="./sound/hover3.mp3" preload="auto"></audio>
@@ -60,28 +61,28 @@
         </nav>
     </div>
 
-    <header>
-
-    </header>
-
-    <main></main>
+    
 
     <footer class="site-footer">
         <div class="container footer-content">
             <div class="footer_contact">
-                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email">
+                <a href="mailto:aga77ams@gmail.com" target="_blank" title="Email" data-aos="flip-right"
+                    data-aos-duration="500">
                     <i class="fa-solid fa-envelope"></i>
                     <span>aga77ams@gmail.com</span>
                 </a>
-                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp">
+                <a href="https://wa.me/994773997811" target="_blank" rel="noopener" title="WhatsApp"
+                    data-aos="flip-right" data-aos-duration="1000">
                     <i class="fa-brands fa-whatsapp"></i>
                     <span>+994 77 399 78 11</span>
                 </a>
-                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin">
+                <a href="https://www.linkedin.com/in/agha-musayev/" target="_blank" title="Linkedin"
+                    data-aos="flip-right" data-aos-duration="1500">
                     <i class="fa-brands fa-square-linkedin"></i>
                     <span>Linkedin</span>
                 </a>
-                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github">
+                <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank" title="Github"
+                    data-aos="flip-right" data-aos-duration="2000">
                     <i class="fa-brands fa-github"></i>
                     <span>Github</span>
                 </a>
@@ -100,6 +101,10 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <script src="sound.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
