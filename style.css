@@ -140,6 +140,7 @@ header {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background4.png') center/cover no-repeat;
     background-attachment: fixed;
     height: fit-content;
+    min-height: 80vh;
     width: 100%;
     padding: 20px 0 !important;
     display: flex;
