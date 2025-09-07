@@ -7,30 +7,49 @@ document.addEventListener("DOMContentLoaded", () => {
     returnAudio.volume = 0.9;
     clickAudio.volume = 0.9;
 
-    // Touch device detection
     let isTouchDevice = false;
     let isClicking = false;
+    let audioUnlocked = false;
 
-    const unlock = () => {
-        [hoverAudio, clickAudio, returnAudio].forEach(a => {
-            a.play().then(() => { a.pause(); a.currentTime = 0; }).catch(() => { });
+    // Daha güclü unlock funksiyası
+    const unlockAudio = async () => {
+        if (audioUnlocked) return;
+
+        try {
+            const audios = [hoverAudio, clickAudio, returnAudio];
+
+            // Hər bir audio üçün unlock
+            for (const audio of audios) {
+                await audio.play();
+                audio.pause();
+                audio.currentTime = 0;
+            }
+
+            audioUnlocked = true;
+            console.log('Audio unlocked successfully');
+
+            // İlk return səsi
+            setTimeout(() => {
+                returnAudio.currentTime = 0;
+                returnAudio.play().catch(e => console.log('Return audio failed:', e));
+            }, 300);
+
+        } catch (error) {
+            console.log('Audio unlock failed:', error);
+        }
+
+        // Event listenerləri təmizlə
+        ["pointerdown", "touchstart", "click", "keydown"].forEach(eventType => {
+            document.removeEventListener(eventType, unlockAudio, { capture: true });
         });
-        ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
-            document.removeEventListener(t, unlock, { capture: true })
-        );
-
-        // Səhifə yükləndikdən sonra return səsini çal
-        setTimeout(() => {
-            returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
-        }, 500); // 500ms gecikməylə
     };
 
-    ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
-        document.addEventListener(t, unlock, { capture: true })
-    );
+    // Bütün mümkün eventlər üçün unlock
+    ["pointerdown", "touchstart", "click", "keydown"].forEach(eventType => {
+        document.addEventListener(eventType, unlockAudio, { capture: true });
+    });
 
-    // Touch device detection
+    // Touch detection
     document.addEventListener("touchstart", () => {
         isTouchDevice = true;
     }, { once: true });
@@ -38,32 +57,44 @@ document.addEventListener("DOMContentLoaded", () => {
     let moved = false;
     document.addEventListener("pointermove", () => { moved = true; }, { once: true });
 
-    const onHover = (e) => {
-        if (!moved || isTouchDevice || isClicking) return;
+    const playHover = () => {
+        if (!moved || isTouchDevice || isClicking || !audioUnlocked) return;
 
-        hoverAudio.currentTime = 0;
-        hoverAudio.play().catch(() => { });
+        try {
+            hoverAudio.currentTime = 0;
+            hoverAudio.play().catch(() => { });
+        } catch (e) {
+            console.log('Hover audio failed:', e);
+        }
     };
 
-    document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
-        el.addEventListener("mouseenter", onHover);
-    });
-
-    document.addEventListener("pointerdown", (e) => {
-        const a = e.target.closest("a, .logo, .menuBar, .tech_head");
-        if (!a) return;
+    const playClick = () => {
+        if (!audioUnlocked) return;
 
         isClicking = true;
-        hoverAudio.pause();
-        hoverAudio.currentTime = 0;
-        clickAudio.currentTime = 0;
-        clickAudio.play().catch(() => { });
+
+        try {
+            hoverAudio.pause();
+            hoverAudio.currentTime = 0;
+            clickAudio.currentTime = 0;
+            clickAudio.play().catch(() => { });
+        } catch (e) {
+            console.log('Click audio failed:', e);
+        }
 
         setTimeout(() => {
             isClicking = false;
         }, 300);
+    };
+
+    // Event handlerləri
+    document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
+        el.addEventListener("mouseenter", playHover);
+        el.addEventListener("pointerdown", playClick);
+        el.addEventListener("touchstart", playClick); // Əlavə touch support
     });
 
+    // Link click handling
     document.querySelectorAll("a").forEach(a => {
         a.addEventListener("click", (e) => {
             const href = a.getAttribute("href") || "";
@@ -80,25 +111,30 @@ document.addEventListener("DOMContentLoaded", () => {
             let navigated = false;
             const NAV_FALLBACK_MS = 250;
 
-            const go = () => {
+            const navigate = () => {
                 if (navigated) return;
                 navigated = true;
                 window.location.href = href;
             };
 
-            if (isFinite(clickAudio.duration) && clickAudio.duration > 0) {
-                clickAudio.addEventListener("ended", go, { once: true });
-                setTimeout(go, NAV_FALLBACK_MS);
+            if (audioUnlocked && isFinite(clickAudio.duration) && clickAudio.duration > 0) {
+                clickAudio.addEventListener("ended", navigate, { once: true });
+                setTimeout(navigate, NAV_FALLBACK_MS);
             } else {
-                setTimeout(go, NAV_FALLBACK_MS);
+                setTimeout(navigate, NAV_FALLBACK_MS);
             }
         });
     });
 
+    // Visibility change
     document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") {
-            returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
+        if (document.visibilityState === "visible" && audioUnlocked) {
+            try {
+                returnAudio.currentTime = 0;
+                returnAudio.play().catch(() => { });
+            } catch (e) {
+                console.log('Return audio failed:', e);
+            }
         }
     });
 });

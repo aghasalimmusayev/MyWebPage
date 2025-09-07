@@ -17,7 +17,10 @@ $('a[href^="#"]').on('click', function (e) {
         }, 800);
     }
 });
-
+$('.logo').on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, 800);
+});
 function isMobile() {
     return window.innerWidth < 768;
 }
