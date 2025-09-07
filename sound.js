@@ -4,65 +4,54 @@ document.addEventListener("DOMContentLoaded", () => {
     const returnAudio = document.getElementById("return-audio");
 
     hoverAudio.volume = 0.9;
-    returnAudio.volume = 0.9;
     clickAudio.volume = 0.9;
+    returnAudio.volume = 0.9;
 
+    // unlock (mobil üçün)
     const unlock = () => {
-        [hoverAudio, clickAudio].forEach(a => {
+        [hoverAudio, clickAudio, returnAudio].forEach(a => {
             a.play().then(() => { a.pause(); a.currentTime = 0; }).catch(() => { });
         });
-        ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
+        ["pointerdown", "touchstart", "keydown", "click"].forEach(t =>
             document.removeEventListener(t, unlock, { capture: true })
         );
     };
-    ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
+    ["pointerdown", "touchstart", "keydown", "click"].forEach(t =>
         document.addEventListener(t, unlock, { capture: true })
     );
-    let moved = false;
-    document.addEventListener("pointermove", () => { moved = true; }, { once: true });
-    const onHover = () => {
-        if (!moved) return;
-        hoverAudio.currentTime = 0;
-        hoverAudio.play().catch(() => { });
-    };
+
+    // ---- Hover səsi yalnız desktop üçün ----
+    const supportsHover = matchMedia("(hover:hover)").matches;
+    if (supportsHover) {
+        document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
+            el.addEventListener("mouseenter", () => {
+                hoverAudio.currentTime = 0;
+                hoverAudio.play().catch(() => { });
+            });
+        });
+    }
+
+    // ---- Click səsi ----
     document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
-        el.addEventListener("mouseenter", onHover);
-        // el.addEventListener("focusin", onHover);
-    });
-    document.addEventListener("pointerdown", (e) => {
-        const a = e.target.closest("a, .logo, .menuBar, .tech_head");
-        if (!a) return;
-        hoverAudio.pause(); hoverAudio.currentTime = 0;
-        clickAudio.currentTime = 0;
-        clickAudio.play().catch(() => { });
-    });
-    document.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", (e) => {
-            const href = a.getAttribute("href") || "";
-            const isHashOrEmpty = href === "" || href === "#" || href.startsWith("#");
-            const isNewTab = a.target === "_blank";
-            if (isHashOrEmpty) {
-                e.preventDefault();
-                return;
-            }
-            if (isNewTab) return;
-            e.preventDefault();
-            let navigated = false;
-            const NAV_FALLBACK_MS = 250; // istəyə görə 150–300 arası seçə bilərsən
-            const go = () => {
-                if (navigated) return;
-                navigated = true;
-                window.location.href = href;
-            };
-            if (isFinite(clickAudio.duration) && clickAudio.duration > 0) {
-                clickAudio.addEventListener("ended", go, { once: true });
-                setTimeout(go, NAV_FALLBACK_MS);
-            } else {
-                setTimeout(go, NAV_FALLBACK_MS);
+        el.addEventListener("click", (e) => {
+            // əvvəlcə click səsini çal
+            clickAudio.currentTime = 0;
+            clickAudio.play().catch(() => { });
+
+            // naviqasiyanı gecikdir (səsin kəsilməməsi üçün)
+            if (el.tagName.toLowerCase() === "a") {
+                const href = el.getAttribute("href") || "";
+                const isHash = href === "" || href === "#" || href.startsWith("#");
+                const isNewTab = el.target === "_blank";
+                if (!isHash && !isNewTab) {
+                    e.preventDefault();
+                    setTimeout(() => { window.location.href = href; }, 200);
+                }
             }
         });
     });
 
+    // ---- Return səsi (geri qayıdanda və ya səhifə görünəndə) ----
     document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
             returnAudio.currentTime = 0;
