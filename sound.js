@@ -4,54 +4,97 @@ document.addEventListener("DOMContentLoaded", () => {
     const returnAudio = document.getElementById("return-audio");
 
     hoverAudio.volume = 0.9;
-    clickAudio.volume = 0.9;
     returnAudio.volume = 0.9;
+    clickAudio.volume = 0.9;
 
-    // unlock (mobil üçün)
+    // Touch device detection
+    let isTouchDevice = false;
+    let isClicking = false;
+
     const unlock = () => {
         [hoverAudio, clickAudio, returnAudio].forEach(a => {
             a.play().then(() => { a.pause(); a.currentTime = 0; }).catch(() => { });
         });
-        ["pointerdown", "touchstart", "keydown", "click"].forEach(t =>
+        ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
             document.removeEventListener(t, unlock, { capture: true })
         );
+
+        // Səhifə yükləndikdən sonra return səsini çal
+        setTimeout(() => {
+            returnAudio.currentTime = 0;
+            returnAudio.play().catch(() => { });
+        }, 500); // 500ms gecikməylə
     };
-    ["pointerdown", "touchstart", "keydown", "click"].forEach(t =>
+
+    ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
         document.addEventListener(t, unlock, { capture: true })
     );
 
-    // ---- Hover səsi yalnız desktop üçün ----
-    const supportsHover = matchMedia("(hover:hover)").matches;
-    if (supportsHover) {
-        document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
-            el.addEventListener("mouseenter", () => {
-                hoverAudio.currentTime = 0;
-                hoverAudio.play().catch(() => { });
-            });
-        });
-    }
+    // Touch device detection
+    document.addEventListener("touchstart", () => {
+        isTouchDevice = true;
+    }, { once: true });
 
-    // ---- Click səsi ----
+    let moved = false;
+    document.addEventListener("pointermove", () => { moved = true; }, { once: true });
+
+    const onHover = (e) => {
+        if (!moved || isTouchDevice || isClicking) return;
+
+        hoverAudio.currentTime = 0;
+        hoverAudio.play().catch(() => { });
+    };
+
     document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
-        el.addEventListener("click", (e) => {
-            // əvvəlcə click səsini çal
-            clickAudio.currentTime = 0;
-            clickAudio.play().catch(() => { });
+        el.addEventListener("mouseenter", onHover);
+    });
 
-            // naviqasiyanı gecikdir (səsin kəsilməməsi üçün)
-            if (el.tagName.toLowerCase() === "a") {
-                const href = el.getAttribute("href") || "";
-                const isHash = href === "" || href === "#" || href.startsWith("#");
-                const isNewTab = el.target === "_blank";
-                if (!isHash && !isNewTab) {
-                    e.preventDefault();
-                    setTimeout(() => { window.location.href = href; }, 200);
-                }
+    document.addEventListener("pointerdown", (e) => {
+        const a = e.target.closest("a, .logo, .menuBar, .tech_head");
+        if (!a) return;
+
+        isClicking = true;
+        hoverAudio.pause();
+        hoverAudio.currentTime = 0;
+        clickAudio.currentTime = 0;
+        clickAudio.play().catch(() => { });
+
+        setTimeout(() => {
+            isClicking = false;
+        }, 300);
+    });
+
+    document.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", (e) => {
+            const href = a.getAttribute("href") || "";
+            const isHashOrEmpty = href === "" || href === "#" || href.startsWith("#");
+            const isNewTab = a.target === "_blank";
+
+            if (isHashOrEmpty) {
+                e.preventDefault();
+                return;
+            }
+            if (isNewTab) return;
+
+            e.preventDefault();
+            let navigated = false;
+            const NAV_FALLBACK_MS = 250;
+
+            const go = () => {
+                if (navigated) return;
+                navigated = true;
+                window.location.href = href;
+            };
+
+            if (isFinite(clickAudio.duration) && clickAudio.duration > 0) {
+                clickAudio.addEventListener("ended", go, { once: true });
+                setTimeout(go, NAV_FALLBACK_MS);
+            } else {
+                setTimeout(go, NAV_FALLBACK_MS);
             }
         });
     });
 
-    // ---- Return səsi (geri qayıdanda və ya səhifə görünəndə) ----
     document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "visible") {
             returnAudio.currentTime = 0;
