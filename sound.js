@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const clickAudio = document.getElementById("click-audio");
     const returnAudio = document.getElementById("return-audio");
 
-    hoverAudio.volume = 0.3;
-    returnAudio.volume = 0.8;
-    clickAudio.volume = 0.7;
+    hoverAudio.volume = 0.9;
+    returnAudio.volume = 0.9;
+    clickAudio.volume = 0.9;
 
     const unlock = () => {
         [hoverAudio, clickAudio].forEach(a => {

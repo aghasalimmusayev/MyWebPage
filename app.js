@@ -21,11 +21,14 @@ $('a[href^="#"]').on('click', function (e) {
 function isMobile() {
     return window.innerWidth < 768;
 }
-function toggleAltLinks() {
-    if (isMobile()) {
-        altLinks.classList.toggle("open");
-    }
-}
+// function toggleAltLinks() {
+//     if (isMobile()) {
+//         if (!altLinks.style.height || altLinks.style.height == '0px') {
+//             altLinks.style.height = altLinks.scrollHeight + 'px'
+//         }
+//         else altLinks.style.height = '0px'
+//     }
+// }
 
 function updateSpacerHeight() {
     const openInfo = document.querySelector('.tech_info.open');
