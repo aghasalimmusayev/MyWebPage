@@ -33,7 +33,7 @@
                         <li onclick="toggleAltLinks()">
                             <a href="#">
                                 <span>Projects</span>
-                                <!-- <i class="fa-solid fa-chevron-right"></i> -->
+                                <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="alt_links">
                                 <li><a href="https://aga-calc.vercel.app/" target="_blank">Calc</a></li>
@@ -48,6 +48,7 @@
                             </ul>
                         </li>
                         <li class="desk_links"><a href="#technologies">Technologies</a></li>
+                        <li class="desk_links"><a href="#tools">Tools</a></li>
                         <li class="desk_links"><a href="#about">About</a></li>
                     </ul>
                     <div class="menuBar">
@@ -67,18 +68,46 @@
         <div class="container">
             <section class="header_content">
                 <div class="profile">
-                    <div class="profile_img" data-aos="fade-right" data-aos-duration="2000">
+                    <div class="profile_img" data-aos="fade-right" data-aos-duration="1000">
                         <img src="./img/profile_img.JPG" alt="">
                     </div>
+                    <a href="./img/CV.pdf" target="_blank" download class="contact_method cd_file_download"
+                        data-aos="fade-right" data-aos-duration="1000">
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Download CV</h4>
+                            <p>PDF format</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="hero-content">
-                    <h1 class="hero-title" data-aos="fade-left" data-aos-duration="2000">I am Aghasalim Musayev</h1>
-                    <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="2000">Frontend Developer</p>
-                    <p class="hero-description" data-aos="fade-up" data-aos-duration="2000">
-                        Passionate about crafting modern, high-performance web experiences where design meets
-                        functionality. I blend creativity with clean code to deliver solutions that not only
-                        work flawlessly but also inspire users. For me, frontend development is more than
-                        writing code — it’s transforming ideas into digital reality. </p>
+                    <h1 class="hero-title" data-aos="fade-left" data-aos-duration="1000">Hello, I am <br> Aghasalim
+                        Musayev
+                    </h1>
+                    <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="1000">Frontend Developer</p>
+                    <p class="hero_description" data-aos="fade-up" data-aos-duration="1000">
+                        <span>
+                            I have over a year of experience as a Frontend Developer, specializing in JavaScript and
+                            React technologies. I am also skilled in Bootstrap, Tailwind CSS, and jQuery, and have
+                            hands-on experience working with REST APIs to integrate data and build efficient,
+                            user-friendly web applications. I focus on creating responsive designs that adapt seamlessly
+                            across different devices. Currently, I am expanding my knowledge by exploring backend
+                            technologies to strengthen my full-stack capabilities.
+                        </span><br>
+                        <span>
+                            I`m Passionate about crafting modern, high-performance web experiences where design meets
+                            functionality, I combine creativity with clean, maintainable code to deliver solutions that
+                            not only work seamlessly but also inspire users.
+                        </span><br>
+                        <span>
+                            For me, frontend development is more than just writing code — it is about transforming ideas
+                            into digital reality. My goal is to continuously innovate, grow as a developer, and make
+                            meaningful contributions to the tech industry. I am eager to learn, quick to adapt to new
+                            technologies, and an active team player focused on delivering innovative solutions.
+                        </span>
+                    </p>
                 </div>
             </section>
         </div>
@@ -88,15 +117,15 @@
 
         <section id="technologies">
             <div class="container">
-                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="2000" data-aos-easing="linear">
+                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear">
                     Technologies</h2>
                 <div class="technologies_content">
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="300">
                             <div class="tech_img">
                                 <img src="./img/JavaScript-logo.png" alt="">
-                                <span class="tech_name">Java Script</span>
                             </div>
+                            <span class="tech_name">Java Script</span>
                         </div>
                         <p class="tech_info">I have strong expertise in JavaScript, including ES6+ features, DOM
                             manipulation, event handling, and asynchronous programming (Promises, async/await).
@@ -104,11 +133,11 @@
                             reusable code structures.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1000">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="600">
                             <div class="tech_img">
                                 <img src="./img/React-logo.png" alt="">
-                                <span class="tech_name">React</span>
                             </div>
+                            <span class="tech_name">React</span>
                         </div>
                         <p class="tech_info">Proficient in building modern, scalable applications with React.
                             I work with functional components, hooks (useState, useEffect, useMemo, useCallback),
@@ -116,11 +145,26 @@
                             and creating responsive, reusable UI components.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1500">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="900">
+                            <div class="tech_img">
+                                <img src="./img/redux.svg" alt="">
+                            </div>
+                            <span class="tech_name">Redux Toolkit</span>
+                        </div>
+                        <p class="tech_info">
+                            Proficient in using Redux Toolkit for modern and scalable state management
+                            in React applications. Skilled in creating slices, reducers, and asynchronous thunks with
+                            createAsyncThunk for handling API calls. I can implement middleware for tasks like
+                            localStorage sync, optimize performance with selectors and memoization, and structure
+                            Redux logic cleanly for maintainable and efficient applications.
+                        </p>
+                    </div>
+                    <div class="tech">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1200">
                             <div class="tech_img">
                                 <img src="./img/rest-api.png" alt="">
-                                <span class="tech_name">Rest API</span>
                             </div>
+                            <span class="tech_name">Rest API</span>
                         </div>
                         <p class="tech_info">Experienced in consuming and designing RESTful APIs using clear resource
                             models and HTTP methods (GET, POST, PUT/PATCH, DELETE). Comfortable with authentication
@@ -128,11 +172,11 @@
                             async/await, test via Postman.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2000">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1500">
                             <div class="tech_img">
                                 <img src="./img/responsive2.png" alt="">
-                                <span class="tech_name">Responsive design</span>
                             </div>
+                            <span class="tech_name">Responsive design</span>
                         </div>
                         <p class="tech_info">
                             Skilled in creating fully responsive layouts using CSS, CSS3, Flexbox, and Grid.
@@ -143,11 +187,11 @@
                         </p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2400">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="1800">
                             <div class="tech_img">
                                 <img src="./img/Bootstrap_logo.png" alt="">
-                                <span class="tech_name">Bootstrap</span>
                             </div>
+                            <span class="tech_name">Bootstrap</span>
                         </div>
                         <p class="tech_info">Proficient in Bootstrap framework for building responsive, mobile-first
                             websites quickly. I can customize Bootstrap components, grids, utilities,
@@ -155,11 +199,11 @@
                             with custom CSS for unique, professional designs.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2700">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2100">
                             <div class="tech_img">
                                 <img src="./img/Tailwind_CSS_Logo.png" alt="">
-                                <span class="tech_name">Tailwind CSS</span>
                             </div>
+                            <span class="tech_name">Tailwind CSS</span>
                         </div>
                         <p class="tech_info">Experienced in using Tailwind CSS for creating highly customizable and
                             responsive designs with utility-first classes. I can rapidly build modern UIs,
@@ -167,11 +211,11 @@
                             specific design systems and brand guidelines.</p>
                     </div>
                     <div class="tech">
-                        <div class="tech_head" data-aos="flip-right" data-aos-duration="3000">
+                        <div class="tech_head" data-aos="flip-right" data-aos-duration="2400">
                             <div class="tech_img">
                                 <img src="./img/jquery.svg" alt="">
-                                <span class="tech_name">JQuery</span>
                             </div>
+                            <span class="tech_name">JQuery</span>
                         </div>
                         <p class="tech_info">Experienced in using jQuery for DOM traversal, animations, and AJAX
                             requests. Although I focus on modern JavaScript and React, I can work with jQuery for
@@ -183,59 +227,103 @@
             </div>
         </section>
 
+        <section id="tools">
+            <div class="container">
+                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear">Tools</h2>
+                <div class="tools_content">
+                    <div class="tool" data-aos="flip-up" data-aos-duration="500">
+                        <div class="tool_img">
+                            <img src="./img/github.png" alt="">
+                        </div>
+                        <span class="tool_name">GitHub</span>
+                    </div>
+                    <div class="tool" data-aos="flip-up" data-aos-duration="700">
+                        <div class="tool_img">
+                            <img src="./img/figma.png" alt="">
+                        </div>
+                        <span class="tool_name">Figma</span>
+                    </div>
+                    <div class="tool" data-aos="flip-up" data-aos-duration="900">
+                        <div class="tool_img">
+                            <img src="./img/Visual_Studio_Code.png" alt="">
+                        </div>
+                        <span class="tool_name">VS Code</span>
+                    </div>
+                    <div class="tool" data-aos="flip-up" data-aos-duration="1100">
+                        <div class="tool_img">
+                            <img src="./img/postman.svg" alt="">
+                        </div>
+                        <span class="tool_name">Postman</span>
+                    </div>
+                    <div class="tool" data-aos="flip-up" data-aos-duration="1300">
+                        <div class="tool_img">
+                            <img src="./img/npm.png" alt="">
+                        </div>
+                        <span class="tool_name">Npm</span>
+                    </div>
+                    <div class="tool" data-aos="flip-up" data-aos-duration="1500">
+                        <div class="tool_img">
+                            <img src="./img/vitejs.png" alt="">
+                        </div>
+                        <span class="tool_name">Vite</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="about">
             <div class="container about_content">
-                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="2000" data-aos-easing="linear">About Me
+                <h2 class="section_head" data-aos="zoom-in" data-aos-duration="1000" data-aos-easing="linear">About Me
                 </h2>
                 <div class="about_inner">
                     <div class="about_text">
-                        <h3 data-aos="fade-right" data-aos-duration="3000">Hello, <br> I'm <span>Aghasalim
-                                Musayev</span></h3>
-                        <p data-aos="fade-right" data-aos-duration="3000">
-                            I am a passionate <strong>Frontend Developer</strong> who creates modern,
+                        <h3 data-aos="fade-right" data-aos-duration="1000">
+                            My name is <span>Aghasalim Musayev</span>
+                        </h3>
+                        <p data-aos="fade-right" data-aos-duration="1000">
+                            I am a Frontend Developer who creates modern,
                             responsive and user-friendly web applications.
                             My focus is on clean code, performance optimization and delivering
                             smooth user experiences.
                         </p>
-                        <p data-aos="fade-right" data-aos-duration="2500">
-                            Skilled with <strong>HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), React.js,
-                                Redux Toolkit, RESTful APIs, jQuery, Bootstrap, Tailwind CSS</strong> and
+                        <p data-aos="fade-right" data-aos-duration="1200">
+                            Skilled with HTML5, CSS3 (Flexbox, Grid), JavaScript (ES6+), React.js,
+                            Redux Toolkit, RESTful APIs, jQuery, Bootstrap, Tailwind CSS and
                             modern development workflows. I have strong knowledge of building responsive
                             and cross-browser compatible layouts, applying best practices in
-                            <strong>UI/UX design, performance optimization</strong> and ensuring
+                            UI/UX design, performance optimization and ensuring
                             accessibility.
                         </p>
-                        <p data-aos="fade-right" data-aos-duration="2000">
-                            I can design and develop <strong>scalable, reusable components</strong> with
+                        <p data-aos="fade-right" data-aos-duration="1400">
+                            I can design and develop scalable, reusable components with
                             React, manage application state efficiently with Redux Toolkit, and integrate
-                            APIs with Axios or Fetch. I am experienced in <strong>responsive design
-                                principles</strong>, creating adaptive interfaces for mobile and desktop, and
+                            APIs with Axios or Fetch. I am experienced in responsive design
+                            principles, creating adaptive interfaces for mobile and desktop, and
                             customizing frameworks like Bootstrap and Tailwind for unique designs.
                         </p>
-                        <p data-aos="fade-right" data-aos-duration="1500">
-                            I also work with <strong>version control (Git/GitHub)</strong>, package
-                            managers (NPM/Yarn), and tools like <strong>Postman, VS Code, Figma</strong>
+                        <p data-aos="fade-right" data-aos-duration="1600">
+                            I also work with version control (Git/GitHub), package
+                            managers (NPM/Yarn), and tools like Postman, VS Code, Figma
                             to ensure smooth development.
                             Continuously improving my skills, I stay updated with the latest frontend
                             technologies and love turning ideas into real-world, high-quality projects.
                         </p>
-                        <p data-aos="fade-right" data-aos-duration="1000">
-                            Currently, I am also learning <strong>TypeScript</strong> to write safer and
-                            more scalable applications, as well as exploring <strong>backend technologies</strong>
-                            such as Node.js, Express.js, and databases (MongoDB, PostgreSQL).
-                            My goal is to expand my knowledge beyond frontend and gain a deeper
-                            understanding of <strong>full-stack development</strong>, allowing me to build
-                            complete, end-to-end solutions.
+                        <p data-aos="fade-right" data-aos-duration="1800">
+                            I am currently learning TypeScript to write safer and more scalable applications. At the
+                            same time, I am pursuing formal education in backend technologies such as Node.js,
+                            Express.js, and databases (MongoDB, PostgreSQL). My goal is to strengthen my full-stack
+                            development skills by combining my frontend experience with backend knowledge, enabling me
+                            to build complete, end-to-end solutions.
                         </p>
                     </div>
                     <div class="address">
-                        <div class="about_map" data-aos="flip-right" data-aos-duration="3000">
+                        <!-- <div class="about_map" data-aos="flip-right" data-aos-duration="3000">
                             <iframe src="https://www.google.com/maps?q=40.362581,50.297454&hl=az&z=14&output=embed"
                                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
-                        </div>
+                        </div> -->
                         <a class="contact_method" href="mailto:aga77ams@gmail.com" data-aos="fade-up"
-                            data-aos-duration="1500">
+                            data-aos-duration="800">
                             <div class="contact-icon">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
@@ -254,6 +342,15 @@
                                 <p>+994 77 399 78 11</p>
                             </div>
                         </a>
+                        <a href="" class="contact_method" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Baku, Azerbaijan</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -266,19 +363,19 @@
             <div class="footer_contact">
                 <div class="social_links">
                     <a href="mailto:aga77ams@gmail.com" class="social_link" title="Email" data-aos="flip-right"
-                        data-aos-duration="2000">
+                        data-aos-duration="1000">
                         <i class="fa-solid fa-envelope"></i>
                     </a>
                     <a href="https://wa.me/994773997811" class="social_link" title="WhatsApp" target="_blank"
-                        data-aos="flip-right" data-aos-duration="2000">
+                        data-aos="flip-right" data-aos-duration="1000">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/agha-musayev/" class="social_link" title="LinkedIn"
-                        target="_blank" data-aos="flip-right" data-aos-duration="2000">
+                        target="_blank" data-aos="flip-right" data-aos-duration="1000">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/aghasalimmusayev?tab=repositories" class="social_link" title="GitHub"
-                        target="_blank" data-aos="flip-right" data-aos-duration="2000">
+                        target="_blank" data-aos="flip-right" data-aos-duration="1000">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
