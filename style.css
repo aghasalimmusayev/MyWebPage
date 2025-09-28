@@ -7,7 +7,7 @@
 body {
     background-color: var(--bg_color);
     font-family: "Roboto", sans-serif !important;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background4.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/header_background2.png') center/cover no-repeat;
     background-attachment: fixed;
 }
 .container {
@@ -89,6 +89,7 @@ nav {position: relative;}
 }
 .links li:last-child {border-bottom: 1px solid var(--line_color);}
 .alt_links li:last-child {border-bottom: none;}
+.alt_links li img{display: none;}
 .desk_links{display: none;}
 #checkbox {display: none;}
 .toggle {
@@ -212,6 +213,7 @@ header {
 .tech_name{
     color: var(--txt_color);
     font-weight: 300;
+    /* white-space: nowrap; */
     transition: .3s;
 }
 .tech_img{
@@ -238,6 +240,11 @@ header {
     box-shadow: 0 0 30px var(--line_color);
     border-color: var(--txt_color);
 }
+.tech_info span{
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+}
 .tech_info{
     font-size: 0.9rem;
     font-weight: 300;
@@ -246,12 +253,6 @@ header {
     color: var(--txt_color);
     transition: .4s;
     border-radius: 0 20px 0 20px;
-}
-.tech_info.open{
-    height: auto;
-    padding: 10px;
-    margin-top: 8px;
-    border: 1px solid var(--line_color);
 }
 .tech_spacer{display: none;}
 
@@ -509,6 +510,7 @@ header {
         border-bottom: none;
         border-radius: 0 0 10px 10px;
         overflow: hidden;
+        transition: 0.3s;
     }
     .alt_links li{
         padding: 0;
@@ -520,12 +522,6 @@ header {
         padding: 15px;
         width: 100%;
     }
-    .alt_links a:hover{background-color: var(--bg_color2);}
-    .links li:hover .alt_links{
-        border: 1px solid var(--line_color);
-        border-top: none;
-        height: 395px;
-    }
     .fa-chevron-down {
         display: initial !important;
         font-weight: 300;
@@ -533,9 +529,24 @@ header {
         margin-left: 10px;
         transition: .3s;
     }
+    .alt_links a:hover{background-color: var(--bg_color2);}
+    .links li:hover .alt_links{
+        border: 1px solid var(--line_color);
+        border-top: none;
+        height: 450px;
+    }
     .links li:hover .fa-chevron-down{transform: rotate(180deg);}
     .desk_links{display: initial;}
     .menuBar {display: none;}
+    .alt_links li:hover img{display: block;}
+    .alt_links li img{
+        width: 300px;
+        height: 160px;
+        object-fit: cover;
+        position: fixed;
+        z-index: 300;
+        display: none;
+    }
     header {padding: 20px 0 80px !important;}
     .header_content {
         margin-top: 50px;
@@ -564,7 +575,7 @@ header {
     #technologies{padding: 100px 0 150px;}
     .tech_name{
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     .tech_img{
         width: 90px;
@@ -579,18 +590,12 @@ header {
         font-size: 1.2rem;
         font-weight: 400;
         line-height: 1.5rem;
-        margin-top: 70px;
         position: absolute;
+        top: 150px;
         left: 0;
         width: 100%;
-        transform: scaleY(0);
-        transform-origin: center;
     }
-    .tech_info.open{
-        padding: 20px;
-        border-radius: 10px;
-        transform: scaleY(1);
-    }
+    .tech_info span{padding: 20px;}
 
     .tools_content{
         flex-direction: row;

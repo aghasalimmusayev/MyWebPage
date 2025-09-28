@@ -24,40 +24,28 @@ $('.logo').on('click', function (e) {
 function isMobile() {
     return window.innerWidth < 768;
 }
-// function toggleAltLinks() {
-//     if (isMobile()) {
-//         if (!altLinks.style.height || altLinks.style.height == '0px') {
-//             altLinks.style.height = altLinks.scrollHeight + 'px'
-//         }
-//         else altLinks.style.height = '0px'
-//     }
-// }
 
-function updateSpacerHeight() {
-    const openInfo = document.querySelector('.tech_info.open');
-    if (openInfo) {
-        spacer.style.height = openInfo.offsetHeight + 50 + 'px';
-    } else {
-        spacer.style.height = '0px';
-    }
-}
 document.addEventListener('DOMContentLoaded', function () {
     techHead.forEach((head, index) => {
         head.addEventListener('click', function () {
             const currentInfo = techInfos[index];
-            const isCurrentlyOpen = currentInfo.classList.contains("open");
+            const isOpen = currentInfo.style.height && currentInfo.style.height !== '0px';
             techInfos.forEach((info, i) => {
-                info.classList.remove("open");
-                techHead[i].classList.remove("active");
+                info.style.height = '0px';
+                info.style.border = 'none';
+                info.style.margin = '0px';
+                spacer.style.height = '0px';
+                techHead[i].classList.remove('active');
             });
-            if (!isCurrentlyOpen) {
-                currentInfo.classList.add("open");
-                head.classList.add("active");
+            if (!isOpen) {
+                currentInfo.style.height = currentInfo.scrollHeight + 'px';
+                spacer.style.height = currentInfo.scrollHeight + 'px';
+                currentInfo.style.border = '1px solid var(--line_color)';
+                currentInfo.style.marginTop = '8px';
+                head.classList.add('active');
             }
-            setTimeout(updateSpacerHeight, 100);
         });
     });
-    updateSpacerHeight()
 });
 
 (function () {
@@ -65,4 +53,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.year-dup').forEach(el => el.textContent = year);
 })();
 
-
+// Şəkilləri dinamik olaraq yerləşdirmək üçün
+document.addEventListener('DOMContentLoaded', function () {
+    const altLinksItems = document.querySelectorAll('.alt_links li');
+    altLinksItems.forEach(item => {
+        const img = item.querySelector('img');
+        item.addEventListener('mouseenter', function () {
+            if (img) {
+                const rect = item.getBoundingClientRect();
+                img.style.left = (rect.left - 300) + 'px';
+                img.style.top = rect.top + 'px';
+            }
+        });
+    });
+});
