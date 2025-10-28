@@ -193,6 +193,109 @@ header {
     opacity: 0.8;
 }
 
+/**<<--EDUCATION-->>*/
+#education {
+    padding: 90px 0;
+    color: var(--txt_color);
+    position: relative;
+}
+.edu_timeline {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.edu_timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--line_color);
+    box-shadow: 0 0 10px #c1effb4d;
+}
+.edu_item {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+.edu_icon {
+    width: 40px;
+    height: 40px;
+    background: #00121a80;
+    border: 2px solid var(--line_color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--txt_color);
+    font-size: 1rem;
+    box-shadow: 0 0 12px #c1effb40;
+    z-index: 2;
+}
+.edu_content {
+    background: #0416238c;
+    border: 1px solid var(--line_color);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: 0 0 12px #c1effb26;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+    flex: 1;
+}
+.edu_content:hover {
+    border-color: var(--txt_color);
+    box-shadow: 0 0 25px #c1effb40;
+}
+.course_name {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 6px #c1effb40;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 5px;
+}
+.course_name span {
+    font-size: .9rem;
+    opacity: .8;
+    font-weight: 400;
+}
+.edu_name {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: .9;
+    margin-bottom: 15px;
+    color: var(--txt_color);
+}
+.edu_content p {
+    font-size: .95rem;
+    line-height: 1.55;
+    opacity: .88;
+    margin-bottom: 10px;
+}
+.edu_skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.edu_skills li {
+    list-style: none;
+    background: #00121a59;
+    border: 1px solid var(--line_color);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: .83rem;
+    box-shadow: 0 0 6px rgba(193, 239, 251, .2);
+    transition: .3s;
+}
+.edu_skills li:hover {
+    background: var(--txt_color);
+    color: var(--bg_color);
+}
+
 /**<<--TECHNOLOGIES-->>*/
 #technologies{
     height: fit-content;
@@ -571,6 +674,15 @@ header {
         margin-bottom: 2rem;
         opacity: 0.8;
     }
+
+    .edu_timeline::before { left: 28px;}
+    .edu_item { gap: 25px;}
+    .edu_icon { 
+        width: 56px;
+        height: 56px;
+        font-size: 1.3rem;
+    }
+    .edu_content { padding: 18px 22px;}
     
     #technologies{padding: 100px 0 150px;}
     .tech_name{
