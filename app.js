@@ -67,3 +67,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+const scrollToTopBtn = document.getElementById('scrollToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 600 || document.documentElement.scrollTop > 600) {
+        scrollToTopBtn.classList.add('show');
+    } else {
+        scrollToTopBtn.classList.remove('show');
+    }
+});
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    const clickAudio = document.getElementById('click-audio');
+    if (clickAudio) {
+        clickAudio.currentTime = 0;
+        clickAudio.play();
+    }
+});

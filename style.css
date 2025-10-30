@@ -3,6 +3,7 @@
     --bg_color2: #041623;
     --txt_color: #c1effb;
     --line_color: #2d6c70;
+    --border_color: #c1effbad;
 }
 body {
     background-color: var(--bg_color);

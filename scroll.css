@@ -1,0 +1,115 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(0, 18, 26, 0.9), rgba(4, 22, 35, 0.9));
+    border: 2px solid var(--line_color);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: all 0.4s ease;
+    z-index: 9998;
+    box-shadow: 0 0 20px rgba(193, 239, 251, 0.3),
+        inset 0 0 15px rgba(193, 239, 251, 0.1);
+    overflow: hidden;
+}
+
+.scroll-to-top::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -80%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(193, 239, 251, 0.1),
+            transparent);
+    transform: rotate(45deg);
+    animation: scan 3s linear infinite;
+}
+
+.scroll-to-top::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border-radius: 7px;
+    border: 1px solid var(--line_color);
+    opacity: 0.5;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(135deg, rgba(4, 22, 35, 0.95), rgba(0, 18, 26, 0.95));
+    border-color: var(--border_color);
+    box-shadow: 0 0 12px rgba(193, 239, 251, 0.6),
+        0 0 60px rgba(193, 239, 251, 0.3),
+        inset 0 0 20px rgba(193, 239, 251, 0.2);
+    transform: translateY(-5px);
+}
+
+.scroll-to-top i {
+    color: var(--txt_color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(193, 239, 251, 0.8),
+        0 0 20px rgba(193, 239, 251, 0.5);
+    z-index: 1;
+}
+
+.scroll-to-top i:nth-child(1) {
+    opacity: 0.4;
+}
+
+.scroll-to-top i:nth-child(2) {
+    opacity: 0.7;
+}
+
+.scroll-to-top i:nth-child(3) {
+    opacity: 1;
+}
+
+.scroll-to-top:hover i {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(193, 239, 251, 1),
+        0 0 30px rgba(193, 239, 251, 0.7),
+        0 0 45px rgba(193, 239, 251, 0.4);
+}
+
+@keyframes scan {
+    0% {
+        transform: translateY(100%) rotate(45deg);
+    }
+
+    100% {
+        transform: translateY(-100%) rotate(45deg);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .scroll-to-top i {
+        font-size: 0.9rem;
+    }
+}
