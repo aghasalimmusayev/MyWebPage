@@ -22,7 +22,6 @@
         inset 0 0 15px rgba(193, 239, 251, 0.1);
     overflow: hidden;
 }
-
 .scroll-to-top::before {
     content: '';
     position: absolute;
@@ -37,7 +36,6 @@
     transform: rotate(45deg);
     animation: scan 3s linear infinite;
 }
-
 .scroll-to-top::after {
     content: '';
     position: absolute;
@@ -46,13 +44,11 @@
     border: 1px solid var(--line_color);
     opacity: 0.5;
 }
-
 .scroll-to-top.show {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-
 .scroll-to-top:hover {
     background: linear-gradient(135deg, rgba(4, 22, 35, 0.95), rgba(0, 18, 26, 0.95));
     border-color: var(--border_color);
@@ -61,7 +57,6 @@
         inset 0 0 20px rgba(193, 239, 251, 0.2);
     transform: translateY(-5px);
 }
-
 .scroll-to-top i {
     color: var(--txt_color);
     font-size: 1rem;
@@ -70,19 +65,9 @@
         0 0 20px rgba(193, 239, 251, 0.5);
     z-index: 1;
 }
-
-.scroll-to-top i:nth-child(1) {
-    opacity: 0.4;
-}
-
-.scroll-to-top i:nth-child(2) {
-    opacity: 0.7;
-}
-
-.scroll-to-top i:nth-child(3) {
-    opacity: 1;
-}
-
+.scroll-to-top i:nth-child(1) {opacity: 0.4;}
+.scroll-to-top i:nth-child(2) {opacity: 0.7;}
+.scroll-to-top i:nth-child(3) {opacity: 1;}
 .scroll-to-top:hover i {
     transform: scale(1.1);
     text-shadow: 0 0 15px rgba(193, 239, 251, 1),
@@ -91,13 +76,8 @@
 }
 
 @keyframes scan {
-    0% {
-        transform: translateY(100%) rotate(45deg);
-    }
-
-    100% {
-        transform: translateY(-100%) rotate(45deg);
-    }
+    0% { transform: translateY(100%) rotate(45deg);}
+    100% { transform: translateY(-100%) rotate(45deg);}
 }
 
 /* Responsive */
@@ -108,8 +88,6 @@
         bottom: 20px;
         right: 5%;
     }
-
-    .scroll-to-top i {
-        font-size: 0.9rem;
-    }
+    .scroll-to-top::before { left: -95%;}
+    .scroll-to-top i {font-size: 0.9rem;}
 }
