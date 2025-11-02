@@ -1,0 +1,120 @@
+.sound-toggle {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background: rgba(45, 108, 112, 0.2);
+    border: 2px solid var(--line_color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 10;
+}
+.sound-toggle::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(193, 239, 251, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+.sound-toggle:hover::before {transform: translateX(100%);}
+.sound-toggle:hover {
+    background: rgba(45, 108, 112, 0.4);
+    border-color: var(--txt_color);
+    box-shadow: 0 0 20px rgba(193, 239, 251, 0.3);
+    transform: scale(1.05);
+}
+
+.sound-toggle:active {transform: scale(0.95);}
+.sound-toggle i {
+    position: absolute;
+    font-size: 1.3rem;
+    color: var(--txt_color);
+    transition: all 0.4s ease;
+    text-shadow: 0 0 8px rgba(193, 239, 251, 0.5);
+}
+
+/* Sound OFF icon (default - görünür) */
+.sound-toggle .sound-off {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    color: #ff6b6b;
+}
+
+/* Sound ON icon (gizli) */
+.sound-toggle .sound-on {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+}
+/* Active state - Sound ON */
+.sound-toggle.active .sound-off {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+}
+.sound-toggle.active .sound-on {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    color: var(--txt_color);
+}
+/* Hover effect */
+.sound-toggle:hover i {text-shadow: 0 0 15px rgba(193, 239, 251, 0.8);}
+/* Active button effect */
+.sound-toggle.active {
+    background: rgba(193, 239, 251, 0.15);
+    border-color: var(--txt_color);
+    box-shadow: 0 0 15px rgba(193, 239, 251, 0.4),
+        inset 0 0 10px rgba(193, 239, 251, 0.1);
+}
+
+/* Pulse animation when active */
+.sound-toggle.active::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border: 2px solid var(--txt_color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: soundPulse 2s ease-in-out infinite;
+}
+
+@keyframes soundPulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 767px) {
+    .navlinks {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo { order: 1;}
+    .sound-toggle {
+        width: 40px;
+        height: 40px;
+        order: 2;
+        margin: 0 auto;
+    }
+    .menuBar {order: 3;}
+    .sound-toggle i { font-size: 1.1rem;}
+}
+
+/* Desktop - menuBar yanında */
+@media (min-width: 768px) {
+    .sound-toggle { margin-left: 20px;}
+}
