@@ -105,16 +105,11 @@
     }
     .logo { order: 1;}
     .sound-toggle {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         order: 2;
         margin: 0 auto;
     }
     .menuBar {order: 3;}
-    .sound-toggle i { font-size: 1.1rem;}
-}
-
-/* Desktop - menuBar yanında */
-@media (min-width: 768px) {
-    .sound-toggle { margin-left: 20px;}
+    .sound-toggle i { font-size: 1rem;}
 }

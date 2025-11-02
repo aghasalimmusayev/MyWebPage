@@ -56,30 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
         clickAudio.play().catch(() => { });
     };
     // Bütün interaktiv elementlərə hover (scrollToTop və soundToggle XARİC)
-    document.querySelectorAll('a, .logo, .menuBar, .tech_head').forEach(el => {
+    document.querySelectorAll('a, .logo, .menuBar, #soundToggle, #scrollToTop').forEach(el => {
         el.addEventListener('mouseenter', playHover);
     });
     // Click events (sound toggle xaric)
     document.addEventListener('pointerdown', (e) => {
         if (e.target.closest('#soundToggle')) return;
-        const target = e.target.closest('a, .logo, .menuBar, .tech_head');
+        const target = e.target.closest('a, .logo, .menuBar, #soundToggle, #scrollToTop');
         if (!target) return;
         playClick();
-    });
-    // ScrollToTop button - AYRICA
-    if (scrollBtn) {
-        scrollBtn.addEventListener('mouseenter', playHover);
-        scrollBtn.addEventListener('click', (e) => {
-            playClick();
-        });
-    }
-    // SoundToggle button hover
-    soundToggle.addEventListener('mouseenter', playHover);
-    // Tab-a qayıdanda return sound
-    document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible' && audioEnabled) {
-            returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
-        }
     });
 });

@@ -3,6 +3,7 @@ const techImages = document.querySelectorAll('.tech_img');
 const techInfos = document.querySelectorAll('.tech_info');
 const techHead = document.querySelectorAll('.tech_head');
 const spacer = document.querySelector('.tech_spacer');
+const technologiesContent = document.querySelector(".technologies_content")
 
 $('#checkbox').on('change', function () {
     $('.links').toggleClass('open');
@@ -22,31 +23,31 @@ $('.logo').on('click', function (e) {
     $('html, body').animate({ scrollTop: 0 }, 800);
 });
 function isMobile() {
-    return window.innerWidth < 768;
+    return window.innerWidth < 900;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    techHead.forEach((head, index) => {
-        head.addEventListener('click', function () {
-            const currentInfo = techInfos[index];
-            const isOpen = currentInfo.style.height && currentInfo.style.height !== '0px';
-            techInfos.forEach((info, i) => {
-                info.style.height = '0px';
-                info.style.border = 'none';
-                info.style.margin = '0px';
-                spacer.style.height = '0px';
-                techHead[i].classList.remove('active');
-            });
-            if (!isOpen) {
-                currentInfo.style.height = currentInfo.scrollHeight + 'px';
-                spacer.style.height = currentInfo.scrollHeight + 'px';
-                currentInfo.style.border = '1px solid var(--line_color)';
-                currentInfo.style.marginTop = '8px';
-                head.classList.add('active');
-            }
-        });
-    });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     techHead.forEach((head, index) => {
+//         head.addEventListener('click', function () {
+//             const currentInfo = techInfos[index];
+//             const isOpen = currentInfo.style.height && currentInfo.style.height !== '0px';
+//             techInfos.forEach((info, i) => {
+//                 info.style.height = '0px';
+//                 info.style.border = 'none';
+//                 info.style.margin = '0px';
+//                 spacer.style.height = '0px';
+//                 techHead[i].classList.remove('active');
+//             });
+//             if (!isOpen) {
+//                 currentInfo.style.height = currentInfo.scrollHeight + 'px';
+//                 spacer.style.height = currentInfo.scrollHeight + 'px';
+//                 currentInfo.style.border = '1px solid var(--line_color)';
+//                 currentInfo.style.marginTop = '8px';
+//                 head.classList.add('active');
+//             }
+//         });
+//     });
+// });
 
 (function () {
     const year = String(new Date().getFullYear());
@@ -81,9 +82,9 @@ scrollToTopBtn.addEventListener('click', () => {
         top: 0,
         behavior: 'smooth'
     });
-    const clickAudio = document.getElementById('click-audio');
-    if (clickAudio) {
-        clickAudio.currentTime = 0;
-        clickAudio.play();
-    }
+    // const clickAudio = document.getElementById('click-audio');
+    // if (clickAudio) {
+    //     clickAudio.currentTime = 0;
+    //     clickAudio.play();
+    // }
 });
