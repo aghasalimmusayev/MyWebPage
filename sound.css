@@ -42,7 +42,7 @@
 .sound-toggle .sound-off {
     opacity: 1;
     transform: scale(1) rotate(0deg);
-    color: #ff6b6b;
+    color: var(--txt_color);
 }
 
 /* Sound ON icon (gizli) */
