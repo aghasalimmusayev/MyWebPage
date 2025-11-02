@@ -2,101 +2,82 @@ document.addEventListener("DOMContentLoaded", () => {
     const hoverAudio = document.getElementById("hover-audio");
     const clickAudio = document.getElementById("click-audio");
     const returnAudio = document.getElementById("return-audio");
-
+    const soundToggle = document.getElementById("soundToggle");
+    const scrollBtn = document.getElementById('scrollToTop');
+    // Audio volume settings
     hoverAudio.volume = 0.9;
     returnAudio.volume = 0.9;
     clickAudio.volume = 0.9;
-
-    // Touch device detection
-    let isTouchDevice = false;
-    let isClicking = false;
-
-    const unlock = () => {
-        [hoverAudio, clickAudio, returnAudio].forEach(a => {
-            a.play().then(() => { a.pause(); a.currentTime = 0; }).catch(() => { });
+    let audioEnabled = false;
+    // Audio unlock funksiyası
+    const unlockAudio = () => {
+        [hoverAudio, clickAudio, returnAudio].forEach(audio => {
+            audio.play().then(() => {
+                audio.pause();
+                audio.currentTime = 0;
+            }).catch(() => { });
         });
-        ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
-            document.removeEventListener(t, unlock, { capture: true })
-        );
-
-        // Səhifə yükləndikdən sonra return səsini çal
-        setTimeout(() => {
-            returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
-        }, 500); // 500ms gecikməylə
     };
-
-    ["pointerdown", "pointermove", "keydown", "touchstart", "click"].forEach(t =>
-        document.addEventListener(t, unlock, { capture: true })
-    );
-
-    // Touch device detection
-    document.addEventListener("touchstart", () => {
-        isTouchDevice = true;
-    }, { once: true });
-
-    let moved = false;
-    document.addEventListener("pointermove", () => { moved = true; }, { once: true });
-
-    const onHover = (e) => {
-        if (!moved || isTouchDevice || isClicking) return;
-
+    // Sound toggle button click
+    soundToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        audioEnabled = !audioEnabled;
+        soundToggle.classList.toggle('active', audioEnabled);
+        if (audioEnabled) {
+            unlockAudio();
+            console.log('🔊 Səs effektləri aktivdir');
+            clickAudio.currentTime = 0;
+            clickAudio.play().catch(() => { });
+        } else {
+            console.log('🔇 Səs effektləri deaktivdir');
+            [hoverAudio, clickAudio].forEach(audio => {
+                audio.pause();
+                audio.currentTime = 0;
+            });
+        }
+    });
+    // Mobile/Desktop detect
+    const isTouchDevice = () => {
+        return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+    };
+    // Hover sound effect
+    const playHover = (e) => {
+        if (!audioEnabled || isTouchDevice()) return;
         hoverAudio.currentTime = 0;
         hoverAudio.play().catch(() => { });
     };
-
-    document.querySelectorAll("a, .logo, .menuBar, .tech_head").forEach(el => {
-        el.addEventListener("mouseenter", onHover);
-    });
-
-    document.addEventListener("pointerdown", (e) => {
-        const a = e.target.closest("a, .logo, .menuBar, .tech_head");
-        if (!a) return;
-
-        isClicking = true;
+    // Click sound effect
+    const playClick = () => {
+        if (!audioEnabled) return;
         hoverAudio.pause();
         hoverAudio.currentTime = 0;
         clickAudio.currentTime = 0;
         clickAudio.play().catch(() => { });
-
-        setTimeout(() => {
-            isClicking = false;
-        }, 300);
+    };
+    // Bütün interaktiv elementlərə hover (scrollToTop və soundToggle XARİC)
+    document.querySelectorAll('a, .logo, .menuBar, .tech_head').forEach(el => {
+        el.addEventListener('mouseenter', playHover);
     });
-
-    document.querySelectorAll("a").forEach(a => {
-        a.addEventListener("click", (e) => {
-            const href = a.getAttribute("href") || "";
-            const isHashOrEmpty = href === "" || href === "#" || href.startsWith("#");
-            const isNewTab = a.target === "_blank";
-
-            if (isHashOrEmpty) {
-                e.preventDefault();
-                return;
-            }
-            if (isNewTab) return;
-
-            e.preventDefault();
-            let navigated = false;
-            const NAV_FALLBACK_MS = 250;
-
-            const go = () => {
-                if (navigated) return;
-                navigated = true;
-                window.location.href = href;
-            };
-
-            if (isFinite(clickAudio.duration) && clickAudio.duration > 0) {
-                clickAudio.addEventListener("ended", go, { once: true });
-                setTimeout(go, NAV_FALLBACK_MS);
-            } else {
-                setTimeout(go, NAV_FALLBACK_MS);
-            }
+    // Click events (sound toggle xaric)
+    document.addEventListener('pointerdown', (e) => {
+        if (e.target.closest('#soundToggle')) return;
+        const target = e.target.closest('a, .logo, .menuBar, .tech_head');
+        if (!target) return;
+        playClick();
+    });
+    // ScrollToTop button - AYRICA
+    if (scrollBtn) {
+        scrollBtn.addEventListener('mouseenter', playHover);
+        scrollBtn.addEventListener('click', (e) => {
+            playClick();
         });
-    });
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.visibilityState === "visible") {
+    }
+    // SoundToggle button hover
+    soundToggle.addEventListener('mouseenter', playHover);
+    // Tab-a qayıdanda return sound
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible' && audioEnabled) {
             returnAudio.currentTime = 0;
             returnAudio.play().catch(() => { });
         }
