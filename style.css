@@ -607,7 +607,7 @@ header {
     .links li:hover .alt_links{
         border: 1px solid var(--line_color);
         border-top: none;
-        height: 450px;
+        height: 433px;
     }
     .links li:hover .fa-chevron-down{transform: rotate(180deg);}
     .desk_links{display: initial;}
