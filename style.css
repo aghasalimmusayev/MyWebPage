@@ -726,6 +726,21 @@ header {
     }
     .social_links {gap: 30px;}
 }
+
+@supports (-webkit-touch-callout: none) { /*! Safari-de altlink-in prorblemi ucun (Testing)*/
+    @media (min-width: 768px) {
+        .links,
+        .nav_bg,
+        nav { overflow: visible; }
+        .alt_links {
+        z-index: 10000;
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        will-change: transform;
+        }
+    }
+}
+
 @media (min-width: 900px) {
     .logo {
         font-size: 1.5rem;
