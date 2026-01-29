@@ -300,7 +300,7 @@ header {
 }
 
 /**<<--TECHNOLOGIES-->>*/
-#technologies{
+#technologies, #technologies2{
     height: fit-content;
     padding: 20px 0;
 }
@@ -656,7 +656,7 @@ header {
     }
     .edu_content { padding: 18px 22px;}
     
-    #technologies{padding: 100px 0 150px;}
+    #technologies, #technologies2{padding: 100px 0 150px;}
     .tech_name{
         text-align: center;
         font-size: 1.1rem;
