@@ -188,6 +188,7 @@ header {
     opacity: 0.9;
     font-weight: 300;
 }
+.hero_description span{margin-left: 25px;}
 .hero_description {
     font-size: 1rem;
     line-height: 1.6;
@@ -676,12 +677,6 @@ header {
     .tech_info span{padding: 20px;}
 
     .tools_content{
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 50px;
-    }
-    .tools_content{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -776,7 +771,7 @@ header {
     }
     .technologies_content{
         display: flex;
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: center;
+        gap: 30px;
     }
 }
