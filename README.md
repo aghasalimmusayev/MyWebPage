@@ -34,19 +34,19 @@
 
 # 📂 Project Structure
 * MyWebPage/
-    │
-    ├── index.html          # Main HTML structure
-    ├── app.js              # Main interaction logic
-    ├── sound.js            # Sound effect system
-    ├── style.css           # Main styling
-    ├── reset.css           # CSS reset
-    ├── scroll.css          # Scroll animations & button styles
-    ├── sound.css           # Sound toggle styling
-    │
-    ├── img/                # Images and project previews
-    ├── sound/              # Audio files
-    │
-    └── AghasalimMusayev.pdf  # CV file
+│
+├── index.html          Main HTML structure
+├── app.js              Main interaction logic
+├── sound.js            Sound effect system
+├── style.css           Main styling
+├── reset.css           CSS reset
+├── scroll.css          Scroll animations & button styles
+├── sound.css           Sound toggle styling
+│
+├── img/                Images and project previews
+├── sound/              Audio files
+│
+└── AghasalimMusayev.pdf  # CV file
 
 # ✨ Features & Functionality
 * Responsive Navigation Bar
@@ -96,7 +96,7 @@
     - GitHub: https://github.com/aghasalimmusayev
     - LinkedIn: https://www.linkedin.com/in/agha-musayev/
     - Email: aga77ams@gmail.com
-    - Phone: +994 77 399 78 11
+    - Phone: (+994)773997811
 
 ### ⭐ If You Like This Project
 # Give it a ⭐ on GitHub!
