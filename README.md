@@ -34,19 +34,20 @@
 
 # 📂 Project Structure
 * MyWebPage/
-│
-├── index.html          Main HTML structure
-├── app.js              Main interaction logic
-├── sound.js            Sound effect system
-├── style.css           Main styling
-├── reset.css           CSS reset
-├── scroll.css          Scroll animations & button styles
-├── sound.css           Sound toggle styling
-│
-├── img/                Images and project previews
-├── sound/              Audio files
-│
-└── AghasalimMusayev.pdf  # CV file
+├── 📁 img
+├── 📁 sound
+│   ├── 🎵 Click3.mp3
+│   ├── 🎵 hover10.mp3
+│   └── 🎵 return.mp3
+├── 📕 AghasalimMusayev.pdf
+├── 📝 README.md
+├── 📄 app.js
+├── 🌐 index.html
+├── 🎨 reset.css
+├── 🎨 scroll.css
+├── 🎨 sound.css
+├── 📄 sound.js
+└── 🎨 style.css
 
 # ✨ Features & Functionality
 * Responsive Navigation Bar
