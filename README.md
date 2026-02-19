@@ -33,6 +33,7 @@
     - Custom Audio Effects
 
 # 📂 Project Structure
+```txt
 * MyWebPage/
 ├── 📁 img
 ├── 📁 sound
@@ -48,6 +49,7 @@
 ├── 🎨 sound.css
 ├── 📄 sound.js
 └── 🎨 style.css
+```
 
 # ✨ Features & Functionality
 * Responsive Navigation Bar
