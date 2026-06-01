@@ -2,6 +2,7 @@
     position: relative;
     width: 45px;
     height: 45px;
+    align-self: center;
     background: rgba(45, 108, 112, 0.2);
     border: 2px solid var(--line_color);
     border-radius: 50%;

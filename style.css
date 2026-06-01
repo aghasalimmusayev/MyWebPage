@@ -65,7 +65,7 @@ nav {position: relative;}
     transition: 0.6s;
 }
 .links.open {
-    padding: 20px 5% 50px;
+    padding: 0 5% 50px;
     height: 90vh;
 }
 .links li {
@@ -557,21 +557,22 @@ header {
         box-shadow: 0 0 5px var(--txt_color);
     }
     .logo img:hover {filter: drop-shadow(0 0 8px var(--txt_color)) drop-shadow(0 0 12px var(--txt_color));}
-    .navlinks {padding: 0;}
+    .navlinks {padding: 0; align-items: stretch;}
     .links {
         position: static;
         flex-direction: row;
-        align-items: center;
+        align-items: stretch;
         gap: 0;
         width: fit-content;
-        height: fit-content;
-        padding: 15px 0;
+        height: auto;
+        overflow: visible;
+        padding: 0;
     }
     .links li,
-    .links li:last-child {border: none;}
+    .links li:last-child {border: none; display: flex; align-items: center;}
     .links a {
         font-size: 1.1rem;
-        padding: 15px, 10px;
+        padding: 15px, 10px 20px;
     }
     .links a:hover {text-shadow: 0 0 8px var(--txt_color), 0 0 12px var(--txt_color);}
     .alt_links {
