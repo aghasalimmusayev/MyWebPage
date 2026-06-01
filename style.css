@@ -188,12 +188,49 @@ header {
     opacity: 0.9;
     font-weight: 300;
 }
-.hero_description span{margin-left: 25px;}
-.hero_description {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.8;
+.hero-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.stack-label {
+    color: var(--txt_color);
+    font-size: 0.72rem;
+    font-weight: 500;
+    opacity: 0.55;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 58px;
+    margin: 7px 0 10px;
+}
+.stack-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.stack-chip {
+    background: rgba(0, 18, 26, 0.5);
+    border: 1px solid var(--line_color);
+    color: var(--txt_color);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 6px rgba(193, 239, 251, 0.15);
+}
+.stack-chip:hover {
+    background: var(--txt_color);
+    color: var(--bg_color);
+    border-color: var(--txt_color);
+    box-shadow: 0 0 12px rgba(193, 239, 251, 0.4);
+}
+.stack-chip--learning {
+    border-style: dashed;
+    opacity: 0.65;
+}
+.stack-chip--learning:hover {
+    opacity: 1;
 }
 
 /**<<--EDUCATION-->>*/
@@ -401,6 +438,28 @@ header {
 
 /**<<--ABOUT-->>*/
 #about {padding: 60px 0;}
+.about_list {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    /* margin: 0 0 10px; */
+    padding-left: 4px;
+}
+.about_list li {
+    list-style: none;
+    color: var(--txt_color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-left: 30px;
+    position: relative;
+    opacity: 0.88;
+}
+.about_list li::before {
+    content: "—";
+    position: absolute;
+    left: 10px;
+    color: var(--line_color);
+}
 .about_inner {
     display: flex;
     flex-direction: column;
@@ -418,7 +477,7 @@ header {
 }
 .about_text p {
     line-height: 1.6;
-    margin-bottom: 15px;
+    /* margin-bottom: 10px; */
 }
 .address{
     width: 100%;
@@ -638,14 +697,16 @@ header {
         width: 250px;
         margin-top: 20px !important;
     }
-    .hero-title {font-size: 3rem;}
+    .hero-title {font-size: 2.5rem;}
     .hero-subtitle {font-size: 1.4rem;}
-    .hero_description {
-        font-size: 1.2rem;
-        font-style: italic;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        opacity: 0.8;
+    .stack-chip {
+        font-size: 0.95rem;
+        padding: 5px 14px;
+    }
+    .stack-label {
+        font-size: 0.75rem;
+        min-width: 65px;
+        padding-top: 7px;
     }
 
     .edu_timeline::before { left: 28px;}
