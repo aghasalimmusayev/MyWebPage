@@ -40,7 +40,7 @@
 │   ├── 🎵 Click3.mp3
 │   ├── 🎵 hover10.mp3
 │   └── 🎵 return.mp3
-├── 📕 AghasalimMusayev.pdf
+├── 📕 Aghasalim Musayev.pdf
 ├── 📝 README.md
 ├── 📄 app.js
 ├── 🌐 index.html
@@ -84,14 +84,14 @@
 
 # 📄 Included CV
 * The repository contains:
-    *AghasalimMusayev.pdf*
+    *Aghasalim Musayev.pdf*
     * This is my downloadable resume file.
 
 # 👨‍💻 About Me
 * I am a Full Stack Developer focused on:
-    - Frontend (HTML, CSS, JavaScript, React, jQuery, Tailwind, Bootstrap)
+    - Frontend (HTML, CSS, JavaScript, React, NextJS, jQuery, Tailwind, Bootstrap)
     - Backend (Node.js, Express, NestJS)
-    - Database (PostgreSQL, TypeORM)
+    - Database (PostgreSQL, MySQL, TypeORM)
     - REST API development
     - Clean architecture & scalable systems
 
