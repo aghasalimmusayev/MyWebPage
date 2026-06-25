@@ -4,18 +4,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Aghasalim Musayev — Developer</title>
+    <meta name="description" content="Aghasalim Musayev — Full-Stack Developer specializing in React, Next.js, Node.js, NestJS, and PostgreSQL. Building end-to-end web applications from Baku, Azerbaijan.">
+    <meta name="keywords" content="Aghasalim Musayev, Full-Stack Developer, React, Next.js, Node.js, NestJS, PostgreSQL, JavaScript, TypeScript, Baku, Azerbaijan">
+    <meta name="author" content="Aghasalim Musayev">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.agasalim.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.agasalim.com/">
+    <meta property="og:title" content="Aghasalim Musayev | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer specializing in React, Next.js, Node.js, NestJS, and PostgreSQL. Building end-to-end web applications.">
+    <meta property="og:image" content="https://www.agasalim.com/img/Profile.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aghasalim Musayev | Full-Stack Developer">
+    <meta name="twitter:description" content="Full-Stack Developer specializing in React, Next.js, Node.js, NestJS, and PostgreSQL.">
+    <meta name="twitter:image" content="https://www.agasalim.com/img/Profile.png">
+
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="scroll.css">
     <link rel="stylesheet" href="sound.css">
-    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="icon" type="image/png" href="img/favicon2.png">
+
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="./img/Profile.png" fetchpriority="high">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <!-- Font Awesome async load -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"></noscript>
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aghasalim Musayev",
+      "url": "https://www.agasalim.com",
+      "image": "https://www.agasalim.com/img/Profile.png",
+      "jobTitle": "Full-Stack Developer",
+      "description": "Full-Stack Developer specializing in React, Next.js, Node.js, Express.js, NestJS, MySQL and PostgreSQL.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Baku",
+        "addressCountry": "AZ"
+      },
+      "email": "aga77ams@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/agha-musayev/",
+        "https://github.com/aghasalimmusayev"
+      ],
+      "knowsAbout": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "NestJS", "PostgreSQL", "MySQL", "Docker", "Tailwind"]
+    }
+    </script>
 </head>
 
 <audio id="hover-audio" src="sound/hover10.mp3" preload="auto"></audio>
@@ -28,7 +79,7 @@
         <nav>
             <div class="container">
                 <div class="navlinks">
-                    <a href="#" class="logo"><img src="img/logo.png" alt="logo"></a>
+                    <a href="#" class="logo"><img src="img/logo.png" alt="Aghasalim Musayev logo"></a>
                     <ul class="links">
                         <li onclick="toggleAltLinks()">
                             <a href="#">
@@ -39,39 +90,39 @@
                                 <li>
                                     <a href="https://github.com/Off-scape/Backend" target="_blank">Off-Scape
                                         (Backend)</a>
-                                    <img src="./img/Off-scape.png" alt="">
+                                    <img src="./img/Off-scape.png" alt="Off-Scape project screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://github.com/Dashly-tech/Backend" target="_blank">Dashly
                                         (Backend)</a>
-                                    <img src="./img/Dashly.png" alt="">
+                                    <img src="./img/Dashly.webp" alt="Dashly project screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://psy-talk-app.vercel.app/" target="_blank">Psy-Talk (Working on
                                         it)</a>
-                                    <img src="./img/Psy-talk.png" alt="">
+                                    <img src="./img/Psy-talk.webp" alt="Psy-Talk app screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://teras-az-aga.vercel.app/" target="_blank">
                                         teras.az (Working on it)</a>
-                                    <img src="./img/teras_az.JPG" alt="">
+                                    <img src="./img/teras_az.JPG" alt="teras.az project screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://nike-aga.vercel.app/" target="_blank">nike.com(Cover)</a>
-                                    <img src="./img/nike.JPG" alt="">
+                                    <img src="./img/nike.JPG" alt="Nike.com cover project screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://libraff-aga.vercel.app/" target="_blank">libraff(Cover)</a>
-                                    <img src="./img/libraff.JPG" alt="">
+                                    <img src="./img/libraff.JPG" alt="Libraff project screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://aga-calc.vercel.app/" target="_blank">Calc</a>
-                                    <img src="./img/calc.JPG" alt="">
+                                    <img src="./img/calc.JPG" alt="Calculator app screenshot" loading="lazy">
                                 </li>
                                 <li>
                                     <a href="https://github.com/aghasalimmusayev?tab=repositories" target="_blank">
                                         More Repostories</a>
-                                    <img src="./img/repostory.JPG" alt="">
+                                    <img src="./img/repostory.JPG" alt="GitHub repositories" loading="lazy">
                                 </li>
                             </ul>
                         </li>
@@ -102,7 +153,7 @@
             <section class="header_content">
                 <div class="profile">
                     <div class="profile_img" data-aos="fade-right" data-aos-duration="1000">
-                        <img src="./img/Profile.png" alt="">
+                        <img src="./img/Profile.webp" alt="Aghasalim Musayev - Full-Stack Developer" width="320" height="320" fetchpriority="high">
                     </div>
                     <a href="./Aghasalim Musayev.pdf" target="_blank" download class="contact_method cd_file_download"
                         data-aos="fade-right" data-aos-duration="1000">
@@ -289,7 +340,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/JavaScript-logo.png" alt="">
+                                <img src="./img/JavaScript-logo.png" alt="JavaScript logo" loading="lazy">
                             </div>
                             <span class="tech_name">Java Script</span>
                         </div>
@@ -297,7 +348,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/React-logo.png" alt="">
+                                <img src="./img/React-logo.png" alt="React logo" loading="lazy">
                             </div>
                             <span class="tech_name">React</span>
                         </div>
@@ -305,7 +356,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/nextjs-icon.webp" alt="">
+                                <img src="./img/nextjs-icon.webp" alt="Next.js logo" loading="lazy">
                             </div>
                             <span class="tech_name">NextJS</span>
                         </div>
@@ -313,7 +364,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/redux.svg" alt="">
+                                <img src="./img/redux.svg" alt="Redux Toolkit logo" loading="lazy">
                             </div>
                             <span class="tech_name">Redux Toolkit</span>
                         </div>
@@ -321,7 +372,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/responsive2.png" alt="">
+                                <img src="./img/responsive2.png" alt="Responsive design icon" loading="lazy">
                             </div>
                             <span class="tech_name">Responsive</span>
                         </div>
@@ -329,7 +380,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/Bootstrap_logo.png" alt="">
+                                <img src="./img/Bootstrap_logo.png" alt="Bootstrap logo" loading="lazy">
                             </div>
                             <span class="tech_name">Bootstrap</span>
                         </div>
@@ -337,7 +388,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/Tailwind_CSS_Logo.png" alt="">
+                                <img src="./img/Tailwind_CSS_Logo.png" alt="Tailwind CSS logo" loading="lazy">
                             </div>
                             <span class="tech_name">Tailwind CSS</span>
                         </div>
@@ -345,7 +396,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/jquery.svg" alt="">
+                                <img src="./img/jquery.svg" alt="jQuery logo" loading="lazy">
                             </div>
                             <span class="tech_name">JQuery</span>
                         </div>
@@ -353,7 +404,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/api-integration.webp" alt="">
+                                <img src="./img/api-integration.webp" alt="API Integration icon" loading="lazy">
                             </div>
                             <span class="tech_name">API Integration</span>
                         </div>
@@ -370,7 +421,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/nodejs.png" alt="">
+                                <img src="./img/nodejs.png" alt="Node.js logo" loading="lazy">
                             </div>
                             <span class="tech_name">Node JS</span>
                         </div>
@@ -378,7 +429,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/expressjs.png" alt="">
+                                <img src="./img/expressjs.png" alt="Express.js logo" loading="lazy">
                             </div>
                             <span class="tech_name">Express JS</span>
                         </div>
@@ -386,7 +437,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/NestJS.svg" alt="">
+                                <img src="./img/NestJS.svg" alt="NestJS logo" loading="lazy">
                             </div>
                             <span class="tech_name">NestJS</span>
                         </div>
@@ -394,7 +445,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/ts.png" alt="">
+                                <img src="./img/ts.png" alt="TypeScript logo" loading="lazy">
                             </div>
                             <span class="tech_name">TypeScript</span>
                         </div>
@@ -402,7 +453,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/Postgresql.png" alt="">
+                                <img src="./img/Postgresql.png" alt="PostgreSQL logo" loading="lazy">
                             </div>
                             <span class="tech_name">PostgreSQL</span>
                         </div>
@@ -410,7 +461,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/MySQL-Logo.png" alt="">
+                                <img src="./img/MySQL-Logo.png" alt="MySQL logo" loading="lazy">
                             </div>
                             <span class="tech_name">MySQL</span>
                         </div>
@@ -418,7 +469,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/typeorm.png" alt="">
+                                <img src="./img/typeorm.png" alt="TypeORM logo" loading="lazy">
                             </div>
                             <span class="tech_name">TypeORM</span>
                         </div>
@@ -426,7 +477,7 @@
                     <div class="tech">
                         <div class="tech_head" data-aos="flip-right" data-aos-duration="500">
                             <div class="tech_img">
-                                <img src="./img/rest-api.png" alt="">
+                                <img src="./img/rest-api.png" alt="REST API icon" loading="lazy">
                             </div>
                             <span class="tech_name">Rest API</span>
                         </div>
@@ -441,43 +492,43 @@
                 <div class="tools_content">
                     <div class="tool" data-aos="flip-up" data-aos-duration="500">
                         <div class="tool_img">
-                            <img src="./img/github.png" alt="">
+                            <img src="./img/github.png" alt="GitHub logo" loading="lazy">
                         </div>
                         <span class="tool_name">GitHub</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="700">
                         <div class="tool_img">
-                            <img src="./img/figma.png" alt="">
+                            <img src="./img/figma.png" alt="Figma logo" loading="lazy">
                         </div>
                         <span class="tool_name">Figma</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="900">
                         <div class="tool_img">
-                            <img src="./img/Visual_Studio_Code.png" alt="">
+                            <img src="./img/Visual_Studio_Code.png" alt="Visual Studio Code logo" loading="lazy">
                         </div>
                         <span class="tool_name">VS Code</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="1100">
                         <div class="tool_img">
-                            <img src="./img/postman.svg" alt="">
+                            <img src="./img/postman.svg" alt="Postman logo" loading="lazy">
                         </div>
                         <span class="tool_name">Postman</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="1300">
                         <div class="tool_img">
-                            <img src="./img/npm.png" alt="">
+                            <img src="./img/npm.png" alt="npm logo" loading="lazy">
                         </div>
                         <span class="tool_name">Npm</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="1500">
                         <div class="tool_img">
-                            <img src="./img/vitejs.png" alt="">
+                            <img src="./img/vitejs.png" alt="Vite.js logo" loading="lazy">
                         </div>
                         <span class="tool_name">Vite</span>
                     </div>
                     <div class="tool" data-aos="flip-up" data-aos-duration="1700">
                         <div class="tool_img">
-                            <img src="./img/Docker-Logo.png" alt="">
+                            <img src="./img/Docker-Logo.png" alt="Docker logo" loading="lazy">
                         </div>
                         <span class="tool_name">Docker</span>
                     </div>
