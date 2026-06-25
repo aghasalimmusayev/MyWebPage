@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollBtn = document.getElementById('scrollToTop');
     // Audio volume settings
     hoverAudio.volume = 0.9;
-    returnAudio.volume = 0.9;
+    returnAudio.volume = 0.7;
     clickAudio.volume = 0.9;
     let audioEnabled = false;
     // Audio unlock funksiyası
@@ -65,5 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const target = e.target.closest('a, .logo, .menuBar, #soundToggle, #scrollToTop');
         if (!target) return;
         playClick();
+    });
+    // Səhifəyə geri qayıdanda (back/forward cache)
+    window.addEventListener('pageshow', (e) => {
+        if (e.persisted && audioEnabled) {
+            returnAudio.currentTime = 0;
+            returnAudio.play().catch(() => { });
+        }
+    });
+    // Tab-a geri qayıdanda
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden && audioEnabled) {
+            returnAudio.currentTime = 0;
+            returnAudio.play().catch(() => { });
+        }
     });
 });
