@@ -70,14 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('pageshow', (e) => {
         if (e.persisted && audioEnabled) {
             returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
+            returnAudio.play().catch(err => console.warn('pageshow return sound:', err));
         }
     });
     // Tab-a geri qayıdanda
     document.addEventListener('visibilitychange', () => {
         if (!document.hidden && audioEnabled) {
             returnAudio.currentTime = 0;
-            returnAudio.play().catch(() => { });
+            returnAudio.play().catch(err => console.warn('visibilitychange return sound:', err));
         }
     });
 });
